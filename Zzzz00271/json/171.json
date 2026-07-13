@@ -1,0 +1,55 @@
+{
+  "name": "Projections#633",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/633.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 633,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "The Waves"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pebbledash Mixup"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Free Corn"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Pipo"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "The Chef"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "CVGO"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "633.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

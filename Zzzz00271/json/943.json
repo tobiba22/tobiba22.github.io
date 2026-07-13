@@ -1,0 +1,55 @@
+{
+  "name": "Projections#647",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/647.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 647,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Fundamental Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Cobbled"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Bottle"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Plastic Box"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Notecard"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Peanuts"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "647.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

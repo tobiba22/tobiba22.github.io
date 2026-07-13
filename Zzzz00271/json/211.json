@@ -1,0 +1,55 @@
+{
+  "name": "Projections#65",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/65.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 65,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Brown Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "GC26SI"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Wire Question Mark"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "A Button"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "L Test"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "American Express"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ya"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "65.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

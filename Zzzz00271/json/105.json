@@ -1,0 +1,55 @@
+{
+  "name": "Projections#890",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/890.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 890,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Great Outdoors"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "The Paper Spot"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Stop"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Little Presidente"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Counting"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "890.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

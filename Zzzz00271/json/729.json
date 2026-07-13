@@ -1,0 +1,55 @@
+{
+  "name": "Projections#994",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/994.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 994,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Classic Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Chevron"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Presidente"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Angry Birds"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "ID"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Wood"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "994.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

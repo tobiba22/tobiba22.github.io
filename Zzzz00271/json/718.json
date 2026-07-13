@@ -1,0 +1,55 @@
+{
+  "name": "Projections#442",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/442.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 442,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Round The Shops"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Wall Chart Chart"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Plant"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "442.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

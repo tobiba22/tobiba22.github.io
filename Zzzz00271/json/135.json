@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1036",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1036.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1036,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Stained Darkerly"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Dirty Orange"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Packing Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "RR"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1036.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

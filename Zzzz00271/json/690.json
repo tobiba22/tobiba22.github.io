@@ -1,0 +1,53 @@
+{
+  "name": "Projections#239",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "image": "0.png/239.png",
+  "edition": 239,
+  "date": 1774899248811,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wood Panel"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Some Shoes"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Mattress"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Carpet Square in Frame"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Toy Plane"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "OFF"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "239.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

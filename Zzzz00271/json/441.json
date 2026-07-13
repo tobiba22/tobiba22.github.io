@@ -1,0 +1,55 @@
+{
+  "name": "Projections#523",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/523.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 523,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Fundamental Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Floral"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Body Part"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Pipo"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Datsun"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "CEM"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "523.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

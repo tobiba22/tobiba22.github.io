@@ -1,0 +1,55 @@
+{
+  "name": "Projections#480",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/480.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 480,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Faux Wood Design"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Great Outdoors"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Legs"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "The Dancer"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Little Presidente"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Pink Card"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "480.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

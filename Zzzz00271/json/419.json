@@ -1,0 +1,55 @@
+{
+  "name": "Projections#981",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/981.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 981,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Faux Wood Design"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Beige"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Tote of Cement"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Inset Hole"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "American Express"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Building"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "981.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

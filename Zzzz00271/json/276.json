@@ -1,0 +1,55 @@
+{
+  "name": "Projections#659",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/659.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 659,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wave Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Padded Blanket"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Hello Moto"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Datsun"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Diogenes"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "659.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

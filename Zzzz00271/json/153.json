@@ -1,0 +1,55 @@
+{
+  "name": "Projections#982",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/982.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 982,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Kings Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Magical Tiles"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Body Part"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "A Righteous Painting"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cutter"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "982.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

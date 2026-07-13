@@ -1,0 +1,55 @@
+{
+  "name": "Projections#104",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/104.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 104,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Fundamental Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Classroom"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Free Corn"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Packing Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Dots"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "American Express"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ya 2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "104.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

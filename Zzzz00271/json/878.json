@@ -1,0 +1,54 @@
+{
+  "name": "Projections #182",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "182.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 182,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Pink Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Floral"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Some Shoes"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Mattress"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Spider"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "PO2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "182.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  }
+}

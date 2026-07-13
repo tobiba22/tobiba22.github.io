@@ -1,0 +1,55 @@
+{
+  "name": "Projections#384",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/384.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 384,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Floral"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Maglite"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Body Part"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Hauskatze"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Rainbow"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "384.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#855",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/855.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 855,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Beige Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Clubhouse"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Groucho"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "A Button"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Daffy Duck"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ida"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "855.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

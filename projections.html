@@ -1,0 +1,50 @@
+<html>
+  <title>
+   Projections
+  </title>
+  <head>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      min-height: 100vh;
+      position: relative;
+    }
+    .glow-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at center, #ffffc0 0%, #000000 70%);
+      animation: pulse 10s ease-in-out infinite;
+      z-index: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 1; }
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      margin: 60px;
+      text-align: center;
+    }
+    * { font-family: Arial; color: #8b0000; font-size: 26px; }
+    a:link    { color: #00008b; text-decoration: none; background-color: transparent; }
+    a:visited { color: #00008b; text-decoration: none; background-color: transparent; }
+    a:hover   { color: #8b0000; text-decoration: underline; background-color: transparent; }
+    a:active  { color: black; background-color: transparent; }
+  </style>
+  </head>
+<body>
+<div class="glow-bg"></div>
+<div class="content">
+  <p>Projections</p>
+  <p><a href="https://www.vvv.so/projections">Mint Now</a></p>
+  <p>
+    <video controls width="200">
+      <source src="projector_announcement.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </p>
+</div>
+</body>
+</html>

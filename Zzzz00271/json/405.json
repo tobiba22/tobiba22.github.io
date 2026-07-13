@@ -1,0 +1,55 @@
+{
+  "name": "Projections#46",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/46.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 46,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Wavy Vinyl Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Cobbled"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Large Green Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "War"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wire and Yarn"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Plant"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "46.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

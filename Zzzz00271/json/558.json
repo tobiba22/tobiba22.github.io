@@ -1,0 +1,55 @@
+{
+  "name": "Projections#402",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/402.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 402,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "The Waves"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pool Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Nails on a Rug"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Lorem Ipsum Receipt"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bread"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "402.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

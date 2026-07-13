@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1057",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1057.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1057,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Classroom"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Small Drawing"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Femme"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1057.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

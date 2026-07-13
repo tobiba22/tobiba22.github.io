@@ -1,0 +1,55 @@
+{
+  "name": "Projections#878",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/878.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 878,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Quilted"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "GC26SI"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Large Green Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Weird Wood"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "The Light"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "878.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

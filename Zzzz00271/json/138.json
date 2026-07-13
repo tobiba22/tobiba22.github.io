@@ -1,0 +1,55 @@
+{
+  "name": "Projections#339",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/339.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 339,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Beige"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Packing Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Angry Birds"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "RR"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "157.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

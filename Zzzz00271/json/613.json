@@ -1,0 +1,55 @@
+{
+  "name": "Projections#600",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/600.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 600,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Light Vinyl Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Splatter"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Wire Question Mark"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Ashtray"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "silent partner"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bread"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "New Standard"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "600.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

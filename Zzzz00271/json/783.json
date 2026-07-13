@@ -1,0 +1,55 @@
+{
+  "name": "Projections#649",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/649.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 649,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office 2"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Great Outdoors"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "The Granite Guy"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Kia"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "649.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

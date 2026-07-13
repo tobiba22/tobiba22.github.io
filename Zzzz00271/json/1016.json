@@ -1,0 +1,55 @@
+{
+  "name": "Projections#694",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/694.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 694,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wood Panel"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Some Shoes"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Canvas Rebar and Snail"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "The Granite Guy"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "OHP"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "694.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#606",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/606.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 606,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Brick"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Tojiba Muffin"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Orange Block"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "EX3"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "606.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

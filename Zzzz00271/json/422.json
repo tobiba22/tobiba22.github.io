@@ -1,0 +1,55 @@
+{
+  "name": "Projections#922",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/922.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 922,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wave Block"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "The Party"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Ink 1"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wang Huning"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Crash"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "922.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#199",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/199.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 199,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Classic Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Project Room"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Legs"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Canvas Rebar and Snail"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "American Express"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cup Movie"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "199.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

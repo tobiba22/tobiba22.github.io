@@ -1,0 +1,55 @@
+{
+  "name": "Projections#954",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/954.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 954,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Stone Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Warehouse"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "DVDs"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Ball"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Lobster"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Slide 1"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "972.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

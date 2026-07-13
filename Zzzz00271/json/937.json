@@ -1,0 +1,55 @@
+{
+  "name": "Projections#361",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/361.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 361,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Blue Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Free Corn"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "BUBs"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Goose"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "361.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

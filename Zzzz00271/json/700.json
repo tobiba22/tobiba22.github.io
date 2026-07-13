@@ -1,0 +1,54 @@
+{
+  "name": "Projections #350",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "350.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 350,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Stone Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Classroom"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Dummy"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Sweep Pile"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Pencil Return"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "EX1"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "350.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  }
+}

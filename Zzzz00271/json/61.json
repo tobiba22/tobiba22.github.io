@@ -1,0 +1,55 @@
+{
+  "name": "Projections#628",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/628.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 628,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White Brick"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Large Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Godzilla"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Turkish Jades"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "FWBear"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "628.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

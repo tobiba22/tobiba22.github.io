@@ -1,0 +1,55 @@
+{
+  "name": "Projections#393",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/393.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 393,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Light Vinyl Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Tarp Hiding Large Wall Painting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Quiet"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ziggy"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "393.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

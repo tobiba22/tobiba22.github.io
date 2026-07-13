@@ -1,0 +1,55 @@
+{
+  "name": "Projections#214",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/214.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 214,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Fundamental Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Terracota Strip"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Some Shoes"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "KAWS II"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Car Transparency"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "214.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

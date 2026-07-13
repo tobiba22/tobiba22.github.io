@@ -1,0 +1,55 @@
+{
+  "name": "Projections#949",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/949.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 949,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Beige Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Tarp Hiding Large Wall Painting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Tote of Cement"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Paper Strip"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Hello Moto"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Cigarette"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Dog Diagram"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "949.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

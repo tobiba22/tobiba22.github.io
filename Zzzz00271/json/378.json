@@ -1,0 +1,55 @@
+{
+  "name": "Projections#654",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/654.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 654,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rock"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "PCTS"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Little Presidente"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Wood"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "654.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

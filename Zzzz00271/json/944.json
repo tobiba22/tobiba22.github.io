@@ -1,0 +1,55 @@
+{
+  "name": "Projections#333",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/333.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 333,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Brown Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Round The Shops"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Part to Something"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Bottle"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Building"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "333.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

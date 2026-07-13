@@ -1,0 +1,55 @@
+{
+  "name": "Projections#246",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/246.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 246,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Sun Mart"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Toji Mug"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Aniline Yellow"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Wall Museum"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Little Presidente"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Lump"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "246.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

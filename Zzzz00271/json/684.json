@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1001",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1001.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1001,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Stone Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pebbledash Mixup"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Mousey The Mouse"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Ink 3"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "ThatThat"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1001.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

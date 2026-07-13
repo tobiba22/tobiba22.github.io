@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1056",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1056.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1056,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Standard Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wave Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Packing Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "L Test"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Car Guys"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1056.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

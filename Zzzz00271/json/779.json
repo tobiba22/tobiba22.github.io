@@ -1,0 +1,55 @@
+{
+  "name": "Projections#329",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/329.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 329,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rent a Wall"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Tap"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "ThatThat"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "329.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

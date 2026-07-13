@@ -1,0 +1,38 @@
+{
+  "name": "Projections #989",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "989.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 989,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Greenish Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Cinderblock"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "The Granite Guy"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "989.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#144",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/144.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 144,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Greenish Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Shingle Strip"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "DVDs"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Ball"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "silent partner"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Purple Dot"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "144.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

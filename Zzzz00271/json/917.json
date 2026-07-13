@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1078",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1078.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1078,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Classic Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Offince Panels"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Painting For Sale"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Acrobatic Spoons"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 1"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Planks"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1078.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1075",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1075.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1075,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Linoleum Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Storage Unit"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Ashtray"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Plaque"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cup Movie"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1075.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

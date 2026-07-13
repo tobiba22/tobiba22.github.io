@@ -1,0 +1,55 @@
+{
+  "name": "Projections#762",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/762.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 762,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Turf"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Cobbled"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Rice Paper"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 3"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Slide 1"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "762.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

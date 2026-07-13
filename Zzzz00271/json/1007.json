@@ -1,0 +1,55 @@
+{
+  "name": "Projections#190",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/190.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 190,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Luxury Liner"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "The Party"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 2"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Notecard"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Square"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "190.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

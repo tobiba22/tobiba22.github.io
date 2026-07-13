@@ -1,0 +1,55 @@
+{
+  "name": "Projections#843",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/843.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 843,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Classic Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Painting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Free Corn"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Acrobatic Spoons"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Ink 2"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Cigarette"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cup Movie"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "843.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

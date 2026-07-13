@@ -1,0 +1,55 @@
+{
+  "name": "Projections#637",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/637.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 637,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Classic Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "DTLA"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Canvas Rebar and Snail"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wire and Yarn"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Chinese Karaoke"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "294.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

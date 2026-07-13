@@ -1,0 +1,55 @@
+{
+  "name": "Projections#794",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/794.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 794,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Parquet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Deep Blue"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Corrugated Cardboard"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "L Test"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Stick Dog"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "The Man in the Pond"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1037.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

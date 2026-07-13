@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1097",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1097.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1097,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Greenish Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Brick"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "PAPP"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Lost Dog"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Chinese Karaoke"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "347.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

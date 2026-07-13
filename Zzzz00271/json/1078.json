@@ -1,0 +1,55 @@
+{
+  "name": "Projections#942",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/942.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 942,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Linoleum Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Bunker"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Plastic Box"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "ID"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "CVGO"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "942.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

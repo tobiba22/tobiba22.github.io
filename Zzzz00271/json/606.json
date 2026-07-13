@@ -1,0 +1,55 @@
+{
+  "name": "Projections#273",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/273.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 273,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Boucle Room"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Painted Cardboard"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Brick on a String"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Eat"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Notecard"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Chinese Karaoke"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "273.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

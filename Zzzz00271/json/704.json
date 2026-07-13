@@ -1,0 +1,55 @@
+{
+  "name": "Projections#206",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/206.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 206,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Soil Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "A Red"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Tote of Cement"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Breur"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Turkish Jades"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "RR"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "206.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

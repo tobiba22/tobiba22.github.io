@@ -1,0 +1,55 @@
+{
+  "name": "Projections#725",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/725.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 725,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rent a Wall"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Maglite"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Notecard"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "725.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

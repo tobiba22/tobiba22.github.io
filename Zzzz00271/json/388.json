@@ -1,0 +1,55 @@
+{
+  "name": "Projections#315",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/315.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 315,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Brown Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Tojiba Tibet"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Tojiba Muffin"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Acrobatic Spoons"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Inset Hole"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Car Guys"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "315.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

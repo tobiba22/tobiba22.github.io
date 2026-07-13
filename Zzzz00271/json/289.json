@@ -1,0 +1,55 @@
+{
+  "name": "Projections#594",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/594.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 594,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Kings Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Tarp Hiding Large Wall Painting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Pettonton Hole"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "RR"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "594.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

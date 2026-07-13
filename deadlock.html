@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlock Item Flashcards</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1e2530;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --weapon: #e87d25;
+      --vitality: #6aaa1e;
+      --spirit: #c27df7;
+      --correct: #3fb950;
+      --wrong: #f85149;
+      --highlight: #58a6ff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      flex: 1;
+    }
+
+    header h1 span { color: var(--weapon); }
+
+    .mode-tabs {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mode-tab {
+      padding: 6px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+
+    .mode-tab.active {
+      background: var(--highlight);
+      border-color: var(--highlight);
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* FILTERS */
+    .controls {
+      padding: 14px 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .filter-btn {
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.82rem;
+      transition: all 0.15s;
+    }
+
+    .filter-btn.active-weapon { background: var(--weapon); border-color: var(--weapon); color: #000; font-weight: 600; }
+    .filter-btn.active-vitality { background: var(--vitality); border-color: var(--vitality); color: #000; font-weight: 600; }
+    .filter-btn.active-spirit { background: var(--spirit); border-color: var(--spirit); color: #000; font-weight: 600; }
+    .filter-btn.active-all { background: var(--highlight); border-color: var(--highlight); color: #000; font-weight: 600; }
+
+    .spacer { flex: 1; }
+
+    .score-bar {
+      display: flex;
+      gap: 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .score-bar span { color: var(--text); font-weight: 600; }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    /* ===== FLASHCARD MODE ===== */
+    #flashcard-mode { width: 100%; max-width: 560px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+    .progress-text { color: var(--muted); font-size: 0.85rem; }
+
+    .card-scene {
+      width: 100%;
+      height: 340px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card.flipped { transform: rotateY(180deg); }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 28px;
+    }
+
+    .card-face.back {
+      transform: rotateY(180deg);
+      justify-content: flex-start;
+      padding: 24px 28px;
+      overflow-y: auto;
+    }
+
+    .card-front-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .weapon-badge { background: rgba(232,125,37,0.18); color: var(--weapon); }
+    .vitality-badge { background: rgba(106,170,30,0.18); color: var(--vitality); }
+    .spirit-badge { background: rgba(194,125,247,0.18); color: var(--spirit); }
+
+    .card-item-icon {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      image-rendering: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+    }
+
+    .card-item-icon-fallback {
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+    }
+
+    .card-item-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .card-tier {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .flip-hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      position: absolute;
+      bottom: 14px;
+    }
+
+    /* Back of card */
+    .back-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    .back-icon {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .back-title { font-size: 1rem; font-weight: 700; }
+    .back-subtitle { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+    .back-description {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .stat-pill {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+
+    .stat-pill .stat-label { color: var(--muted); font-size: 0.7rem; display: block; }
+
+    /* Flashcard nav */
+    .fc-nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .nav-btn {
+      padding: 9px 22px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.88rem;
+      transition: all 0.15s;
+    }
+
+    .nav-btn:hover:not(:disabled) { background: var(--surface2); border-color: var(--highlight); }
+    .nav-btn:disabled { opacity: 0.35; cursor: default; }
+
+    .nav-btn.primary {
+      background: var(--highlight);
+      border-color: var(--highlight);
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* ===== QUIZ MODE ===== */
+    #quiz-mode { width: 100%; max-width: 700px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+
+    .quiz-card {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .quiz-item-icon {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.7));
+    }
+
+    .quiz-item-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .quiz-question {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .quiz-options {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 520px) {
+      .quiz-options { grid-template-columns: 1fr; }
+    }
+
+    .quiz-option {
+      background: var(--surface2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      font-size: 0.83rem;
+      color: var(--text);
+      line-height: 1.45;
+      transition: all 0.15s;
+      text-align: left;
+    }
+
+    .quiz-option:hover:not(.locked) { border-color: var(--highlight); background: rgba(88,166,255,0.08); }
+    .quiz-option.correct { border-color: var(--correct); background: rgba(63,185,80,0.15); color: var(--correct); font-weight: 600; }
+    .quiz-option.wrong { border-color: var(--wrong); background: rgba(248,81,73,0.12); color: var(--wrong); }
+    .quiz-option.reveal { border-color: var(--correct); background: rgba(63,185,80,0.08); }
+
+    .quiz-feedback {
+      font-size: 0.9rem;
+      font-weight: 600;
+      min-height: 22px;
+    }
+
+    .feedback-correct { color: var(--correct); }
+    .feedback-wrong { color: var(--wrong); }
+
+    .quiz-progress {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .progress-bar-track {
+      height: 4px;
+      background: var(--surface2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--highlight);
+      border-radius: 2px;
+      transition: width 0.3s;
+    }
+
+    /* RESULTS SCREEN */
+    #results-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .result-score {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .result-label { color: var(--muted); font-size: 0.95rem; }
+
+    .result-breakdown {
+      display: flex;
+      gap: 28px;
+    }
+
+    .result-stat { text-align: center; }
+    .result-stat .val { font-size: 1.6rem; font-weight: 700; }
+    .result-stat .lbl { font-size: 0.75rem; color: var(--muted); }
+    .result-stat .val.c { color: var(--correct); }
+    .result-stat .val.w { color: var(--wrong); }
+
+    /* CATEGORY COLORS on card border */
+    .card-face.weapon-border { border-top: 3px solid var(--weapon); }
+    .card-face.vitality-border { border-top: 3px solid var(--vitality); }
+    .card-face.spirit-border { border-top: 3px solid var(--spirit); }
+
+    .quiz-card.weapon-border { border-top: 3px solid var(--weapon); }
+    .quiz-card.vitality-border { border-top: 3px solid var(--vitality); }
+    .quiz-card.spirit-border { border-top: 3px solid var(--spirit); }
+
+    /* ===== MATCHING MODE ===== */
+    #matching-mode {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .matching-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .matching-progress-text { color: var(--muted); font-size: 0.85rem; }
+
+    .matching-score {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .matching-score span { color: var(--text); font-weight: 600; }
+
+    .matching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .matching-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .match-item-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      min-height: 68px;
+    }
+
+    .match-item-card:hover:not(.matched):not(.wrong-flash) {
+      border-color: var(--highlight);
+      background: rgba(88,166,255,0.06);
+    }
+
+    .match-item-card.selected {
+      border-color: var(--highlight);
+      background: rgba(88,166,255,0.14);
+      transform: scale(1.02);
+    }
+
+    .match-item-card.matched {
+      border-color: var(--correct);
+      background: rgba(63,185,80,0.14);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .match-item-card.wrong-flash {
+      border-color: var(--wrong);
+      background: rgba(248,81,73,0.14);
+      animation: wrongShake 0.35s ease;
+    }
+
+    @keyframes wrongShake {
+      0%   { transform: translateX(0); }
+      20%  { transform: translateX(-6px); }
+      40%  { transform: translateX(6px); }
+      60%  { transform: translateX(-4px); }
+      80%  { transform: translateX(4px); }
+      100% { transform: translateX(0); }
+    }
+
+    .match-icon {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+    }
+
+    .match-item-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .match-item-cat {
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .match-desc-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.5;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+    }
+
+    .match-desc-card:hover:not(.matched):not(.wrong-flash) {
+      border-color: var(--highlight);
+      background: rgba(88,166,255,0.06);
+    }
+
+    .match-desc-card.selected {
+      border-color: var(--highlight);
+      background: rgba(88,166,255,0.14);
+      transform: scale(1.02);
+    }
+
+    .match-desc-card.matched {
+      border-color: var(--correct);
+      background: rgba(63,185,80,0.14);
+      cursor: default;
+      pointer-events: none;
+      color: var(--correct);
+      font-weight: 600;
+    }
+
+    .match-desc-card.wrong-flash {
+      border-color: var(--wrong);
+      background: rgba(248,81,73,0.14);
+      animation: wrongShake 0.35s ease;
+    }
+
+    .matching-complete-banner {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--correct);
+      border-radius: 16px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .matching-complete-banner.visible { display: flex; }
+
+    .matching-complete-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--correct);
+    }
+
+    .matching-complete-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><span>Deadlock</span> Item Flashcards</h1>
+  <div class="mode-tabs">
+    <button class="mode-tab active" onclick="setMode('flashcard')">Flashcards</button>
+    <button class="mode-tab" onclick="setMode('quiz')">Quiz</button>
+    <button class="mode-tab" onclick="setMode('matching')">Matching</button>
+  </div>
+</header>
+
+<div class="controls">
+  <button class="filter-btn active-all" data-cat="all" onclick="setFilter('all', this)">All</button>
+  <button class="filter-btn" data-cat="weapon" onclick="setFilter('weapon', this)">Weapon</button>
+  <button class="filter-btn" data-cat="vitality" onclick="setFilter('vitality', this)">Vitality</button>
+  <button class="filter-btn" data-cat="spirit" onclick="setFilter('spirit', this)">Spirit</button>
+  <div class="spacer"></div>
+  <div class="score-bar" id="score-bar" style="display:none">
+    Correct: <span id="score-correct">0</span> &nbsp;/&nbsp; Wrong: <span id="score-wrong">0</span>
+  </div>
+</div>
+
+<main>
+  <!-- FLASHCARD MODE -->
+  <div id="flashcard-mode">
+    <div class="progress-text" id="fc-progress">Card 1 of 40</div>
+    <div class="card-scene" onclick="flipCard()">
+      <div class="card" id="fc-card">
+        <div class="card-face front" id="fc-front">
+          <!-- populated by JS -->
+        </div>
+        <div class="card-face back" id="fc-back">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+    <div class="fc-nav">
+      <button class="nav-btn" id="fc-prev" onclick="fcNav(-1)">← Prev</button>
+      <button class="nav-btn" onclick="shuffleDeck()">Shuffle</button>
+      <button class="nav-btn" id="fc-next" onclick="fcNav(1)">Next →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ MODE -->
+  <div id="quiz-mode" style="display:none">
+    <div class="quiz-progress">
+      <div class="progress-bar-track"><div class="progress-bar-fill" id="quiz-progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="quiz-card" id="quiz-card">
+      <!-- populated by JS -->
+    </div>
+    <div class="quiz-feedback" id="quiz-feedback"></div>
+    <button class="nav-btn primary" id="quiz-next-btn" onclick="quizNext()" style="display:none">Next Question →</button>
+  </div>
+
+  <!-- MATCHING MODE -->
+  <div id="matching-mode" style="display:none">
+    <div class="matching-header">
+      <div class="matching-progress-text" id="match-progress">Round 1</div>
+      <div class="matching-score">Matched: <span id="match-score">0</span> / <span id="match-total">0</span></div>
+    </div>
+    <div class="matching-grid" id="matching-grid">
+      <div class="matching-col" id="match-items-col"></div>
+      <div class="matching-col" id="match-descs-col"></div>
+    </div>
+    <div class="matching-complete-banner" id="match-complete-banner">
+      <div class="matching-complete-title">Round Complete!</div>
+      <div class="matching-complete-sub" id="match-complete-sub"></div>
+      <button class="nav-btn primary" onclick="matchNextRound()">Next Round →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results-screen">
+    <div class="result-score" id="result-pct">—</div>
+    <div class="result-label">Quiz Complete!</div>
+    <div class="result-breakdown">
+      <div class="result-stat"><div class="val c" id="res-correct">0</div><div class="lbl">Correct</div></div>
+      <div class="result-stat"><div class="val w" id="res-wrong">0</div><div class="lbl">Wrong</div></div>
+    </div>
+    <button class="nav-btn primary" onclick="restartQuiz()">Play Again</button>
+  </div>
+</main>
+
+<script>
+const ALL_ITEMS = [
+  {
+    name: "Close Quarters",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/close_quarters.webp",
+    description: "Deal additional Weapon Damage when in close range to your target.",
+    stats: ["+20% Weapon Damage (≤15m)", "+20% Melee Resist"]
+  },
+  {
+    name: "Extended Magazine",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/basic_magazine.webp",
+    description: "Increases your maximum ammunition capacity and boosts weapon damage.",
+    stats: ["+30% Max Ammo", "+8% Weapon Damage"]
+  },
+  {
+    name: "Headshot Booster",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/headshot_booster.webp",
+    description: "Your next headshot against an enemy Hero deals bonus weapon damage.",
+    stats: ["+30 Max Health", "+45 Headshot Bonus Damage", "9s Cooldown"]
+  },
+  {
+    name: "High-Velocity Rounds",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/high_velocity_rounds.webp",
+    description: "Greatly increases bullet velocity and provides a small weapon damage boost.",
+    stats: ["+60% Bullet Velocity", "+8% Weapon Damage"]
+  },
+  {
+    name: "Monster Rounds",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/monster_rounds.webp",
+    description: "Enhances damage and resistance against non-player enemies.",
+    stats: ["+25% Weapon Damage vs NPCs", "+25% Bullet Resist vs NPCs", "+1 Out-of-Combat Regen"]
+  },
+  {
+    name: "Rapid Rounds",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/rapid_rounds.webp",
+    description: "Increases the rate at which your weapon fires.",
+    stats: ["+9% Fire Rate"]
+  },
+  {
+    name: "Restorative Shot",
+    category: "weapon",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/restorative_shot.webp",
+    description: "Your next bullet heals you based on what target you hit — heroes heal more than NPCs.",
+    stats: ["+6% Weapon Damage", "50 Heal vs Heroes", "15 Heal vs NPCs", "6s Cooldown"]
+  },
+  {
+    name: "Active Reload",
+    category: "weapon",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/active_reload.webp",
+    description: "Pressing Reload during the highlighted window instantly finishes your reload and grants temporary combat bonuses.",
+    stats: ["+20% Max Ammo", "+22% Fire Rate (7s)", "+18% Bullet Lifesteal (7s)", "+0.75m Move Speed (7s)"]
+  },
+  {
+    name: "Fleetfoot",
+    category: "weapon",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/fleetfoot.webp",
+    description: "Removes movement speed penalty while shooting. Active: burst of Move Speed and Slow Resistance.",
+    stats: ["+35% Slide Distance", "+6% Bullet Resist", "+3.0m Move Speed (Active)", "+35% Slow Resist (Active)"]
+  },
+  {
+    name: "Mystic Shot",
+    category: "weapon",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/mystic_shot.webp",
+    description: "Your next bullet deals bonus Spirit Damage.",
+    stats: ["+7 Spirit Power", "+40 Spirit Damage", "8s Cooldown"]
+  },
+  {
+    name: "Kinetic Dash",
+    category: "weapon",
+    tier: 2,
+    cost: 2400,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/kinetic_dash.webp",
+    description: "When you Dash-Jump, you gain Fire Rate and bonus Ammo until your next reload.",
+    stats: ["+25% Fire Rate", "+6 Temporary Ammo", "7s Duration"]
+  },
+  {
+    name: "Long Range",
+    category: "weapon",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/long_range.webp",
+    description: "Deal additional Weapon Damage when beyond a minimum distance from your target.",
+    stats: ["+40% Weapon Damage (>15m)", "+8% Weapon Fall-off Range", "+0.75m Sprint Speed"]
+  },
+  {
+    name: "Slowing Bullets",
+    category: "weapon",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/slowing_bullets.webp",
+    description: "Your bullets build up a Movement Slow on enemies.",
+    stats: ["+15% Weapon Damage", "-30% Enemy Move Speed", "-25% Enemy Dash Distance", "3.5s Slow Duration"]
+  },
+  {
+    name: "Berserker",
+    category: "weapon",
+    tier: 3,
+    cost: 3200,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/berserker.webp",
+    description: "Your Weapon Damage increases as you take sustained damage, up to 10 stacks.",
+    stats: ["+8% Bullet Resist", "+7% Weapon Damage per Stack", "10 Max Stacks", "10s Stack Duration"]
+  },
+  {
+    name: "Toxic Bullets",
+    category: "weapon",
+    tier: 3,
+    cost: 3200,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/toxic_bullets.webp",
+    description: "Your bullets build up a Bleed on enemies based on their Max Health, plus Healing Reduction.",
+    stats: ["2.0%/sec Bleed Damage", "30% Healing Reduction", "4s Duration"]
+  },
+  {
+    name: "Heroic Aura",
+    category: "weapon",
+    tier: 3,
+    cost: 3200,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/heroic_aura.webp",
+    description: "Passively grants Bullet Resist to nearby allies. Active grants you and allies Move Speed and Fire Rate.",
+    stats: ["+15% Bullet Resist (Aura)", "+1.5m Sprint Speed", "+26% Fire Rate (Active)", "30m Aura Radius"]
+  },
+  {
+    name: "Extra Health",
+    category: "vitality",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/extra_health.webp",
+    description: "A foundational vitality item that increases maximum health.",
+    stats: ["+210 Bonus Health"]
+  },
+  {
+    name: "Extra Regen",
+    category: "vitality",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/extra_regen.webp",
+    description: "Enhances health regeneration both in and out of combat.",
+    stats: ["+3 Health Regen", "+1 Out-of-Combat Regen"]
+  },
+  {
+    name: "Extra Stamina",
+    category: "vitality",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/extra_stamina.webp",
+    description: "Increases stamina capacity and recovery speed for enhanced mobility.",
+    stats: ["+1 Stamina", "+12% Stamina Recovery"]
+  },
+  {
+    name: "Healing Rite",
+    category: "vitality",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/healing_rite.webp",
+    description: "Active: grant Regen and Sprint Speed to the target. Dispelled by enemy damage. Can be self-cast.",
+    stats: ["300 Total HP Regen (20s)", "+2m Sprint Speed", "30m Cast Range", "70s Cooldown"]
+  },
+  {
+    name: "Sprint Boots",
+    category: "vitality",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/sprint_boots.webp",
+    description: "Enhances out-of-combat movement and regeneration.",
+    stats: ["+2.0m Sprint Speed", "+2 Out-of-Combat Regen"]
+  },
+  {
+    name: "Bullet Lifesteal",
+    category: "vitality",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/bullet_lifesteal.webp",
+    description: "Grants life steal on bullet damage dealt to enemies.",
+    stats: ["+16% Bullet Lifesteal", "+90 Bonus Health"]
+  },
+  {
+    name: "Enduring Speed",
+    category: "vitality",
+    tier: 2,
+    cost: 2400,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/enduring_speed.webp",
+    description: "Reduces the effect of enemy Movement Speed penalties and boosts your own speed.",
+    stats: ["+2.0m Move Speed", "+2 Out-of-Combat Regen", "+25% Slow Resist"]
+  },
+  {
+    name: "Fortitude",
+    category: "vitality",
+    tier: 3,
+    cost: 4000,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/fortitude.webp",
+    description: "After not taking damage for a period, gain health regen. Also grants bonus move speed at high health.",
+    stats: ["+375 Bonus Health", "+2% Max Health Regen", "+1.25m Move Speed (>75% HP)"]
+  },
+  {
+    name: "Lifestrike",
+    category: "vitality",
+    tier: 3,
+    cost: 4000,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/lifestrike.webp",
+    description: "Your Melee Attacks slow enemies and heal you for a percentage of the Melee Damage dealt.",
+    stats: ["+16% Melee Damage", "+125 Bonus Health", "100 Heal on Hit", "30% Melee Hit Heal", "-60% Slow (2.5s)"]
+  },
+  {
+    name: "Warp Stone",
+    category: "vitality",
+    tier: 3,
+    cost: 3200,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/warp_stone.webp",
+    description: "Active: Teleport straight ahead, gaining temporary Bullet Resist.",
+    stats: ["11m Teleport Range", "+30% Bullet Resist (6s)", "16s Cooldown"]
+  },
+  {
+    name: "Metal Skin",
+    category: "vitality",
+    tier: 3,
+    cost: 3200,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/metal_skin.webp",
+    description: "Active: Become completely immune to bullets for a short duration.",
+    stats: ["+12% Bullet Resist (Passive)", "5s Immunity Duration", "24s Cooldown", "-1.5m Move Speed while Active"]
+  },
+  {
+    name: "Inhibitor",
+    category: "vitality",
+    tier: 4,
+    cost: 6400,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/inhibitor.webp",
+    description: "Your bullets build up to reduce the target's outgoing damage and apply Healing Reduction.",
+    stats: ["+25% Weapon Damage", "+150 Bonus Health", "-30% Enemy Damage", "40% Healing Reduction"]
+  },
+  {
+    name: "Siphon Bullets",
+    category: "vitality",
+    tier: 4,
+    cost: 6400,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/siphon_bullets.webp",
+    description: "Your bullets temporarily steal Max HP from enemies. They regain it when the debuff expires.",
+    stats: ["+15% Weapon Damage", "+10% Bullet Resist", "2.5% Max HP Steal", "17s Steal Duration"]
+  },
+  {
+    name: "Divine Barrier",
+    category: "vitality",
+    tier: 4,
+    cost: 8000,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/divine_barrier.webp",
+    description: "Remove all non-stun debuffs from a target and provide them with a Barrier and Move Speed. Can be self-cast.",
+    stats: ["600 Barrier", "+2.75m Move Speed (6s)", "+10% Ability Range", "45s Cooldown"]
+  },
+  {
+    name: "Extra Spirit",
+    category: "spirit",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/extra_spirit.webp",
+    description: "Provides bonus Spirit Power to enhance ability damage and effectiveness.",
+    stats: ["+10 Spirit Power"]
+  },
+  {
+    name: "Mystic Burst",
+    category: "spirit",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mystic_burst.webp",
+    description: "Charges up over time. When charged, your next ability dealing over 80 damage adds bonus Spirit Damage.",
+    stats: ["+40 Bonus Damage", "14s Charge-Up Time"]
+  },
+  {
+    name: "Extra Charge",
+    category: "spirit",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/extra_charge.webp",
+    description: "Grants an extra ability charge and bonus Spirit Power for charged abilities.",
+    stats: ["+1 Bonus Ability Charge", "+7 Spirit Power (Charged Abilities)"]
+  },
+  {
+    name: "Spirit Strike",
+    category: "spirit",
+    tier: 1,
+    cost: 800,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/spirit_strike.webp",
+    description: "Melee attacks deal extra Spirit Damage and reduce the target's Spirit Resist.",
+    stats: ["40 Spirit Damage", "-6% Spirit Resist (6s)", "8s Cooldown"]
+  },
+  {
+    name: "Cold Front",
+    category: "spirit",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/cold_front.webp",
+    description: "Active: Release an expanding ice blast that deals Spirit Damage and Slows all targets it hits.",
+    stats: ["+6% Spirit Resist", "95 Damage", "60% Move Slow (4s)", "12m End Radius", "25s Cooldown"]
+  },
+  {
+    name: "Bullet Resist Shredder",
+    category: "spirit",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/bullet_resist_shredder.webp",
+    description: "When you deal Spirit Damage to enemies, it reduces their Bullet Resist temporarily.",
+    stats: ["+8% Bullet Resist", "-10% Enemy Bullet Resist (8s)"]
+  },
+  {
+    name: "Suppressor",
+    category: "spirit",
+    tier: 2,
+    cost: 1600,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/suppressor.webp",
+    description: "When you deal Spirit Damage to enemies, it reduces their Fire Rate.",
+    stats: ["+6 Spirit Power", "+50 Bonus Health", "-28% Enemy Fire Rate (5s)"]
+  },
+  {
+    name: "Decay",
+    category: "spirit",
+    tier: 3,
+    cost: 3200,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/decay.webp",
+    description: "Active: Inflict non-lethal damage over time based on the target's current health, plus Healing Reduction.",
+    stats: ["+8 Spirit Power", "+65 Bonus Health", "2.6%/sec Bleed", "50% Healing Reduction", "32s Cooldown"]
+  },
+  {
+    name: "Rapid Recharge",
+    category: "spirit",
+    tier: 3,
+    cost: 4000,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/rapid_recharge.webp",
+    description: "Significantly enhances ability charge mechanics — more charges, faster recharge, and cooldown reduction.",
+    stats: ["+2 Bonus Ability Charges", "+30% Faster Charge Time", "+14% CDR for Charged Abilities", "+10 Spirit Power"]
+  },
+  {
+    name: "Ethereal Shift",
+    category: "spirit",
+    tier: 4,
+    cost: 6400,
+    image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/ethereal_shift.webp",
+    description: "Active: Enter a void state — become untargetable and invincible. Afterwards gain Spirit Power, Move Speed, and Spirit Resist.",
+    stats: ["4s Invincible Duration", "+20 Spirit Power (5s)", "+30% Spirit Resist (5s)", "+3m Move Speed (5s)", "35s Cooldown"]
+  },
+  { name: "Intensifying Magazine", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/intensifying_magazine.webp", description: "Increases Weapon Damage as you continuously fire your weapon.", stats: ["+20% Max Ammo", "Up to +45% Weapon Damage (ramps over 2.5s of continuous fire)"] },
+  { name: "Melee Charge", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/melee_charge.webp", description: "Your next Heavy Melee attack against an enemy deals increased damage.", stats: ["+50% Heavy Melee Distance", "+10% Melee Damage", "+6% Bullet Resist", "+25% Bonus Heavy Melee Damage"] },
+  { name: "Opening Rounds", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/opening_rounds.webp", description: "Your attacks have additional Weapon Damage against enemies above 50% health.", stats: ["+10 Spirit Power", "+45% Weapon Damage vs. enemies above 50% HP"] },
+  { name: "Recharging Rush", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/recharging_rounds.webp", description: "Dealing significant weapon damage replenishes a charge for each of your charged abilities.", stats: ["+20% Max Ammo", "+10% Weapon Damage"] },
+  { name: "Spirit Shredder Bullets", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/spirit_shredder_bullets.webp", description: "Your bullets apply a debuff that reduces the Spirit Resist of the target and grants you and your allies Spirit Lifesteal against them.", stats: ["-8% Spirit Resist on target", "+12% Spirit Lifesteal vs. debuffed targets"] },
+  { name: "Split Shot", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/split_shot.webp", description: "Make your weapon fire multishot; hitting more than one Hero per attack grants a stacking weapon damage bonus.", stats: ["+5 Weapon Multishot", "+10% Weapon Damage per Stack (max 6 stacks)"] },
+  { name: "Stalker", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/backstabber.webp", description: "Dealing weapon damage at close range opens a wound granting move speed; wounded enemies take spirit damage over time, have reduced bullet resist, and are revealed through walls.", stats: ["+50 Bonus Health", "-50% Footstep Sound Distance", "+1.5m Move Speed on wound", "-6% Bullet Resist on wounded enemies"] },
+  { name: "Swift Striker", category: "weapon", tier: 3, cost: 2400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/swift_striker.webp", description: "Grants a significant boost to firing speed and sprint speed.", stats: ["+20% Fire Rate", "+0.75m Sprint Speed"] },
+  { name: "Titanic Magazine", category: "weapon", tier: 3, cost: 2400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/titanic_magazine.webp", description: "Greatly increases magazine size and weapon damage.", stats: ["+90% Max Ammo", "+12% Weapon Damage"] },
+  { name: "Weakening Headshot", category: "weapon", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/weakening_headshot.webp", description: "Landing a Headshot on Heroes reduces their Bullet Resist.", stats: ["+60 Health", "-13% Bullet Resist on headshot (12s duration)"] },
+  { name: "Alchemical Fire", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/alchemical_fire.webp", description: "Throw a flask that explodes on contact, creating an area that deals increasing Spirit Damage per second and reduces enemy Bullet Resist.", stats: ["+8 Spirit Power", "45\u00e2\u0080\u009395 DPS in area", "-7% Bullet Resist in area"] },
+  { name: "Ballistic Enchantment", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/alchemical_seal.webp", description: "Imbue an ability with increased range; dealing damage with that ability grants stacking weapon damage per unique hero hit.", stats: ["+20% Weapon Damage per Stack", "+20% Ability Range", "+5% Non-Hero Weapon Damage"] },
+  { name: "Blood Tribute", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/blood_tribute.webp", description: "Toggle: Continually sacrifice Health to improve fire rate, Debuff Resistance, and Move Speed.", stats: ["+8% Spirit Resist", "+4 Out of Combat Regen", "+35% Fire Rate (active)", "+40% Debuff Resist (active)", "+2.0m Move Speed (active)"] },
+  { name: "Burst Fire", category: "weapon", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/burst_fire.webp", description: "Briefly gain Fire Rate and Move Speed when one of your bullets hits an enemy hero.", stats: ["+50% Slide Distance", "+10% Fire Rate", "+32% Fire Rate on proc", "+1.25m Move Speed on proc"] },
+  { name: "Cultist Sacrifice", category: "weapon", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/cultist_sacrifice.webp", description: "Target an enemy NPC and consume it for bonus Souls and a powerful long-lasting buff to weapon damage, health, and ability range.", stats: ["+2 Out of Combat Regen", "+30% Weapon Damage vs. NPCs", "+30% Bullet Resist vs. NPCs", "+8% Weapon Damage (buff)", "+50 Bonus Health (buff)"] },
+  { name: "Escalating Resilience", category: "weapon", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/escalating_resilience.webp", description: "Grants Bullet Resist when your bullets hit an enemy hero; each shot can only grant one stack.", stats: ["+30% Max Ammo", "+75 Bonus Health", "+15% Weapon Damage", "Up to +30% Bullet Resist (stacking)"] },
+  { name: "Express Shot", category: "weapon", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/express_shot.webp", description: "Your next attack will fire twice in quick succession with increased damage and velocity, consuming extra ammo.", stats: ["+125% Weapon Damage on proc", "+35% Secondary Fire Weapon Damage", "+100% Bullet Velocity"] },
+  { name: "Headhunter", category: "weapon", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/headhunter.webp", description: "Your next headshot against an enemy Hero deals bonus weapon damage, heals you, and briefly grants bonus move speed.", stats: ["+75 Headshot Bonus Damage", "+5% Weapon Damage", "+50 Bonus Health", "+1.75m Move Speed on headshot"] },
+  { name: "Hollow Point", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/hollow_point.webp", description: "While above 65% health, gain bonus Weapon Damage and your bullets reduce enemy Bullet Resist.", stats: ["+4.5 Out of Combat Regen", "+125 Bonus Health", "+35% Weapon Damage (above 65% HP)", "-9% Bullet Resist on target (above 65% HP)"] },
+  { name: "Hunter's Aura", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/hunters_aura.webp", description: "Reduces nearby enemies' Bullet Resist and Fire Rate; effect is doubled when only one enemy hero is nearby.", stats: ["+100 Health", "+0.75m Sprint Speed", "-10% Bullet Resist aura", "-14% Fire Rate aura"] },
+  { name: "Point Blank", category: "weapon", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/point_blank.webp", description: "When in close range to your target, gain Weapon Damage and your bullets apply a Movement Slow.", stats: ["+75 Bonus Health", "+30% Melee Resist", "+50% Weapon Damage at close range", "-25% Move Speed on hit at close range"] },
+  { name: "Sharpshooter", category: "weapon", tier: 4, cost: 4800, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/sharp_shooter.webp", description: "Deal additional Weapon Damage when beyond a minimum distance from your target.", stats: ["+70% Weapon Damage", "+20% Weapon Fall-off Range", "+25% Weapon Zoom", "+1.0m Sprint Speed"] },
+  { name: "Spirit Rend", category: "weapon", tier: 4, cost: 4800, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/spellslinger_headshots.webp", description: "Your bullets apply a debuff reducing enemy Spirit Resist and granting Spirit Lifesteal; headshots apply additional stacking Spirit Resist reduction.", stats: ["+75 Bonus Health", "-8% Spirit Resist on target", "+12% Spirit Lifesteal vs. target", "-7% more Spirit Resist on headshot (4 stacks)"] },
+  { name: "Tesla Bullets", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/tesla_bullets.webp", description: "Your bullets have a chance to shock your target; the shock jumps to a nearby enemy.", stats: ["33 Shock Damage", "15% Proc Chance", "4 Max Jumps"] },
+  { name: "Weighted Shots", category: "weapon", tier: 4, cost: 4800, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/weighted_shots.webp", description: "Your bullets build up a Movement Slow on enemies.", stats: ["+40% Weapon Damage", "+20% Debuff Resist", "-30% Move Speed on target (buildup per shot)"] },
+  { name: "Armor Piercing Rounds", category: "weapon", tier: 4, cost: 7200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/armor_piercing_rounds.webp", description: "Your Bullets have a chance to become unavoidable, piercing through enemies and ignoring their Bullet Resistance.", stats: ["+60% Bullet Velocity", "+8% Weapon Damage", "50% Proc Chance to pierce and ignore resist"] },
+  { name: "Capacitor", category: "weapon", tier: 4, cost: 9600, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/capacitor.webp", description: "Launch a projectile that deals spirit damage, applies a strong slow, prevents Stamina usage, and Silences movement-based items and abilities.", stats: ["+5% Fire Rate", "43 Shock Damage passive (jumps to 6 targets)", "100 Damage active", "-75% Max Move Speed active (3s)"] },
+  { name: "Crippling Headshot", category: "weapon", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/crippling_headshot.webp", description: "Landing a Headshot on Heroes reduces their Bullet and Spirit Resist and applies Healing Reduction.", stats: ["+125 Bonus Health", "-16% Bullet Resist on headshot", "-16% Spirit Resist on headshot", "-35% Healing Reduction on headshot"] },
+  { name: "Crushing Fists", category: "weapon", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/crushing_fists.webp", description: "Your melee strikes restore ammo and apply a stacking bullet resist debuff; at max stacks the target is stunned.", stats: ["+60% Heavy Melee Distance", "+20% Melee Damage", "+12% Bullet Resist", "-4% Bullet Resist per stack on enemies (max 6, stun at max)"] },
+  { name: "Frenzy", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/frenzy.webp", description: "While you are below 50% health, gain bonus Move Speed, Fire Rate, and Spirit Resist.", stats: ["+0.75m Move Speed", "+15% Spirit Resist", "+10% Fire Rate", "+2.5m Move Speed below 50% HP", "+25% Fire Rate below 50% HP"] },
+  { name: "Glass Cannon", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/glass_cannon.webp", description: "Each hero kill grants permanent Fire Rate (up to 8 stacks); death removes one stack.", stats: ["+80% Weapon Damage", "-15% Max Health", "+7% Fire Rate per kill (max 8 stacks)"] },
+  { name: "Lucky Shot", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/lucky_shot.webp", description: "Your bullets have a chance to be empowered, dealing bonus weapon damage on hit.", stats: ["+30% Max Ammo", "+100% Bonus Weapon Damage on proc", "25% Proc Chance"] },
+  { name: "Ricochet", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/ricochet.webp", description: "Your bullets will ricochet to enemies near your target, applying any bullet procs and dealing a percentage of the original damage.", stats: ["+18% Fire Rate", "65% Ricochet Damage", "2 Ricochet Targets", "13m Ricochet Range"] },
+  { name: "Shadow Weave", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/shadow_weave.webp", description: "Become Stealthed; attacking from stealth ends it and grants bonus Fire Rate, Spirit Power, and Melee Damage.", stats: ["+10 Out of Combat Regen", "+1.5m Sprint Speed", "+32% Fire Rate on ambush", "+35 Spirit Power on ambush"] },
+  { name: "Silencer", category: "weapon", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/silencer.webp", description: "For the next 4 seconds, all your bullets immediately apply Silence, preventing targets from using abilities.", stats: ["+20% Weapon Damage", "4s Silence on bullets (active, 36s cooldown)", "2s Silence duration per hit"] },
+  { name: "Spellslinger", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/spell_slinger.webp", description: "While in-combat, whenever you cast an ability or item gain a stacking buff that improves fire rate and reload speed.", stats: ["+6% Ability Cooldown Reduction", "+11% Fire Rate", "-10% Reload Time", "Max 6 stacks"] },
+  { name: "Spiritual Overflow", category: "weapon", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/weapon/spiritual_overflow.webp", description: "Gain bonus Fire Rate, Spirit Power, and Ability Duration by charging up when shooting enemy heroes.", stats: ["+15% Spirit Lifesteal", "+32% Fire Rate", "+40 Spirit Power", "+20% Ability Duration"] },
+  { name: "Melee Lifesteal", category: "vitality", tier: 1, cost: 800, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/melee_lifesteal.webp", description: "Your next Melee attack heals you.", stats: ["+12% Melee Damage", "100 Heal on next melee hit (8s cooldown)"] },
+  { name: "Rebuttal", category: "vitality", tier: 1, cost: 800, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/rebuttal.webp", description: "On a successful Parry against an enemy Hero, heal yourself for the damage parried and return that damage to the target, and temporarily gain increased damage.", stats: ["-2s Parry Cooldown", "+18% Melee Resist", "+75 Bonus Health", "+30% Bonus Damage on parry (6s)"] },
+  { name: "Battle Vest", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/battle_vest.webp", description: "While you are above 65% health, gain weapon damage and bonus fire rate.", stats: ["+18% Bullet Resist", "+3 Out of Combat Regen", "+15% Weapon Damage above 65% HP", "+7% Fire Rate above 65% HP"] },
+  { name: "Debuff Reducer", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/debuff_reducer.webp", description: "Reduces the duration of all negative effects applied to you.", stats: ["+25% Debuff Resist"] },
+  { name: "Enchanter's Emblem", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/enchanters_emblem.webp", description: "While you are above 65% health, gain bonus Spirit Power and Cooldown Reduction.", stats: ["+18% Spirit Resist", "+2 Out of Combat Regen", "+15 Spirit Power above 65% HP", "+5% Ability Cooldown Reduction above 65% HP"] },
+  { name: "Guardian Ward", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/guardian_ward.webp", description: "Provide the target with a Barrier and temporary Move Speed; cooldown is halved when cast on someone else.", stats: ["+8% Ability Range", "200 Barrier", "+2.75m Move Speed (6s)", "45s cooldown"] },
+  { name: "Healbane", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/healbane.webp", description: "Your Spirit Damage applies Healing Reduction; if an enemy hero dies under this effect, you receive a large heal.", stats: ["+7 Spirit Power", "35% Healing Reduction on spirit damage", "275 Heal on hero kill under effect"] },
+  { name: "Healing Booster", category: "vitality", tier: 3, cost: 2400, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/healing_booster.webp", description: "Increases the effectiveness of your healing.", stats: ["+20% Healing Effectiveness", "+3 Health Regen", "+1 Out of Combat Regen"] },
+  { name: "Reactive Barrier", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/reactive_barrier.webp", description: "Automatically restores one stamina and gains a Barrier when you are movement locked, Stunned, Chained, Immobilized, or Slept.", stats: ["+6% Spirit Resist", "325 Barrier on CC (40s cooldown, 10s duration)"] },
+  { name: "Restorative Locket", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/restorative_locket.webp", description: "Stores restoration stacks when nearby enemies cast abilities; activate to restore health and stamina based on stacks accumulated.", stats: ["+10% Spirit Resist", "20 HP per stack (max 20 stacks)", "Up to 4 stamina restored (20s cooldown)"] },
+  { name: "Return Fire", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/return_fire.webp", description: "Automatically fire a bullet towards any attacker who damages you with their abilities or weapon.", stats: ["+8% Bullet Resist", "50% Bullet Damage Returned", "25% Spirit Damage Returned", "6s Duration (25s cooldown)"] },
+  { name: "Spirit Lifesteal", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/spirit_lifesteal.webp", description: "Recover health based on spirit damage dealt.", stats: ["+16% Spirit Lifesteal", "+70 Bonus Health", "+6 Spirit Power"] },
+  { name: "Spirit Shielding", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/spirit_shielding.webp", description: "Gain a Barrier whenever you take significant spirit damage from enemy Heroes in a small time frame.", stats: ["+2.5 Out of Combat Regen", "+1.5m Move Speed", "300 Barrier on trigger (45s cooldown)"] },
+  { name: "Weapon Shielding", category: "vitality", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/weapon_shielding.webp", description: "Gain a Barrier whenever you take significant weapon damage from enemy Heroes in a small time frame.", stats: ["+2.5 Out of Combat Regen", "+1.5m Move Speed", "300 Barrier on trigger (35s cooldown)"] },
+  { name: "Bullet Resilience", category: "vitality", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/bullet_resilience.webp", description: "Grants Bullet Resist, with additional Bullet Resist when below 50% health.", stats: ["+30% Bullet Resist", "+15% Bullet Resist below 50% HP"] },
+  { name: "Counterspell", category: "vitality", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/counterspell.webp", description: "Your next parry protects you from the damage and effects of enemy abilities and items; on a successful spell parry heal and gain move speed and Spirit.", stats: ["+75 Bonus Health", "+8 Spirit Power", "150 Heal on spell parry", "+20 Spirit Power on spell parry", "+1.75m Move Speed on spell parry"] },
+  { name: "Dispel Magic", category: "vitality", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/debuff_remover.webp", description: "Purge all non-ultimate negative effects currently applied to you; if any effects were removed, heal yourself and gain a move speed bonus.", stats: ["+16% Spirit Resist", "250 HP Healed on activation", "+2m Move Speed (3s)", "40s cooldown"] },
+  { name: "Fury Trance", category: "vitality", tier: 4, cost: 4800, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/fury_trance.webp", description: "Grants Fire Rate and Spirit Resistance but Silences you and disables stamina usage and regeneration.", stats: ["+18% Bullet Lifesteal", "+100 Bonus Health", "+30% Fire Rate (active)", "+40% Spirit Resist (active)", "6s duration / 18s cooldown"] },
+  { name: "Healing Nova", category: "vitality", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/healing_nova.webp", description: "Heal yourself and nearby allies.", stats: ["+5% Ability Range", "+8 Spirit Power", "325 HP Regen over 2s in 18m radius", "60s cooldown"] },
+  { name: "Majestic Leap", category: "vitality", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/majestic_leap.webp", description: "Launch yourself high into the air and grant yourself a Barrier; cannot be used for 5s if attacked by enemy Hero.", stats: ["200 Barrier (8s)", "45s cooldown", "5s interrupt cooldown if attacked"] },
+  { name: "Rescue Beam", category: "vitality", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/rescue_beam.webp", description: "Heals a target allied hero and yourself for a percentage of Max Health; once while healing you can Pull the target towards you.", stats: ["+0.75m Sprint Speed", "+6% Ability Range", "20% Max HP Heal", "32m Cast Range", "60s cooldown"] },
+  { name: "Spirit Resilience", category: "vitality", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/spirit_resilience.webp", description: "Grants Spirit Resist, with additional Spirit Resist when below 50% health.", stats: ["+30% Spirit Resist", "+15% Spirit Resist below 50% HP"] },
+  { name: "Stamina Mastery", category: "vitality", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/stamina_mastery.webp", description: "Allows an additional use of Air Jump or Air Dash before landing.", stats: ["+2 Stamina", "+18% Stamina Recovery", "+23% Air Jump/Dash Distance"] },
+  { name: "Trophy Collector", category: "vitality", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/trophy_collector.webp", description: "Whenever you score an assist or kill, gain stacking extra health, sprint, ability range, and passive soul generation that persists through death.", stats: ["+20 Bonus Health per stack", "+0.15m Sprint Speed per stack", "+1% Ability Range per stack", "+25 Souls/min per stack (max 16)"] },
+  { name: "Veil Walker", category: "vitality", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/veil_walker.webp", description: "Walking through a cosmic veil grants you Stealth, Heal, and increased Move Speed.", stats: ["+175 Bonus Health", "+10 Spirit Power", "+3.5m Move Speed while invisible", "85 Heal on veil (15s cooldown)"] },
+  { name: "Cheat Death", category: "vitality", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/cheat_death.webp", description: "When you would take lethal damage, become temporarily immune to death and remove all non-stun debuffs, but deal reduced damage and receive reduced healing.", stats: ["+200 Bonus Health", "+15% Bullet Resist", "4.5s death immunity (90s cooldown)"] },
+  { name: "Colossus", category: "vitality", tier: 4, cost: 7200, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/colossus.webp", description: "Grow larger in size, gaining bullet resist, spirit resist, and melee damage while nearby enemies suffer slow and reduced dash speed.", stats: ["+300 Bonus Health", "+15% Base Health", "+15% Weapon Damage", "+35% Bullet Resist / +35% Spirit Resist (active)", "+30% Melee Damage (active)"] },
+  { name: "Diviner's Kevlar", category: "vitality", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/diviners_kevlar.webp", description: "Upon casting an ultimate ability, gain a Barrier and temporary Spirit Power.", stats: ["+15% Ability Duration", "1000 Barrier on ultimate cast", "+35 Spirit Power (20s, 40s cooldown)"] },
+  { name: "Healing Tempo", category: "vitality", tier: 4, cost: 8800, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/healing_tempo.webp", description: "Applying heal to yourself or an ally grants the target bonus fire rate and bonus move speed.", stats: ["+25% Healing Effectiveness", "+10% Spirit Resist", "+6 Health Regen", "+4 Out of Combat Regen", "+35% Fire Rate on heal proc", "+1.25m Move Speed on heal proc"] },
+  { name: "Infuser", category: "vitality", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/infuser.webp", description: "Gain Spirit Lifesteal and Spirit Power; activate for massively increased Spirit Lifesteal and bonus Spirit Power.", stats: ["+16% Spirit Lifesteal", "+10% Spirit Resist", "+100 Bonus Health", "+80% Spirit Lifesteal (active, 30s cooldown)", "+30 Spirit Power (active)"] },
+  { name: "Juggernaut", category: "vitality", tier: 4, cost: 8800, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/juggernaut.webp", description: "Enemies that shoot you have their Fire Rate slowed.", stats: ["+50% Slow Resist", "+2.0m Move Speed", "+25% Melee Resist", "+8 Health Regen", "-36% Fire Rate on attackers (4s)"] },
+  { name: "Leech", category: "vitality", tier: 4, cost: 9600, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/leech.webp", description: "Reduces the effect of enemy applied healing reduction; provides high Spirit and Bullet Lifesteal.", stats: ["+30% Spirit Lifesteal", "+30% Bullet Lifesteal", "+120 Bonus Health", "+12% Weapon Damage", "+12 Spirit Power"] },
+  { name: "Phantom Strike", category: "vitality", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/phantom_strike.webp", description: "Teleport to an enemy target and pull them to the ground, dealing damage, applying Move Speed reduction and Disarm.", stats: ["+15% Weapon Damage", "+8 Spirit Power", "75 Impact Damage", "-50% Move Speed (3s)", "35s cooldown"] },
+  { name: "Plated Armor", category: "vitality", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/plated_armor.webp", description: "Gain a chance to either deflect incoming bullets preventing all weapon damage, or prevent all on-hit effects from bullets.", stats: ["+100 Bonus Health", "30% Deflection Chance", "50% On-Hit Prevention Chance"] },
+  { name: "Spellbreaker", category: "vitality", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/spellbreaker.webp", description: "The next instance of high spirit damage you take is significantly reduced.", stats: ["+18% Spirit Resist", "+25% Debuff Resist", "65% Spirit Damage Reduction on proc (9s cooldown)"] },
+  { name: "Unstoppable", category: "vitality", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/unstoppable.webp", description: "Temporarily suppress negative status effects and become immune to Stun, Silence, Sleep, Root, and Disarm.", stats: ["+25% Debuff Resist", "+125 Bonus Health", "5.5s CC immunity (65s cooldown)"] },
+  { name: "Vampiric Burst", category: "vitality", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/vampiric_burst.webp", description: "Activate to gain massive Bullet Lifesteal, bonus Fire Rate, and extra Ammo beyond max magazine size.", stats: ["+16% Bullet Lifesteal", "+10% Bullet Resist", "+100 Bonus Health", "+80% Bullet Lifesteal (active)", "+34% Fire Rate (active)", "+75% Ammo (active, 4.5s / 30s cooldown)"] },
+  { name: "Witchmail", category: "vitality", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/vitality/witchmail.webp", description: "Taking heavy hits of spirit damage from an enemy reduces a random ability cooldown.", stats: ["+20% Spirit Resist", "+14 Spirit Power", "-4s Random Ability Cooldown per heavy spirit hit (75 dmg threshold)"] },
+  { name: "Golden Goose Egg", category: "spirit", tier: 1, cost: 800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/goose_egg.webp", description: "Gain souls over time while alive; hatch the egg to gain souls and permanent buffs based on souls stored.", stats: ["-10% Damage Penalty", "+1m Sprint Speed", "+1 Out of Combat Regen"] },
+  { name: "Mystic Expansion", category: "spirit", tier: 1, cost: 800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mystic_reach.webp", description: "Imbue an ability to increase its range and effect radius.", stats: ["Increased imbued ability range and radius"] },
+  { name: "Mystic Regeneration", category: "spirit", tier: 1, cost: 800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mystic_regen.webp", description: "Dealing Spirit Damage to enemy Heroes grants you Bonus Health Regen; stacks when damaging different heroes.", stats: ["+50 Bonus Health", "+4 HP/s Regen on spirit damage (6s)"] },
+  { name: "Rusted Barrel", category: "spirit", tier: 1, cost: 800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/rusted_barrel.webp", description: "Target an enemy to reduce their Fire Rate and Bullet Resistance.", stats: ["+50 Bonus Health", "+0.5m Sprint Speed", "-32% Fire Rate (5s, 16s cooldown)", "-8% Bullet Resist (5s)"] },
+  { name: "Arcane Surge", category: "spirit", tier: 3, cost: 2400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/arcane_surge.webp", description: "When you Dash-Jump, your next ability use will have bonus Range, Duration, and Spirit Power.", stats: ["+12% Ability Range (on proc)", "+15% Ability Duration (on proc)", "+20 Spirit Power (on proc, 7s)"] },
+  { name: "Compress Cooldown", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/improved_cooldown.webp", description: "Imbue an ability to reduce its Cooldown.", stats: ["Reduced imbued ability cooldown"] },
+  { name: "Duration Extender", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/duration_extender.webp", description: "Imbue an ability to increase its Duration.", stats: ["Increased imbued ability duration"] },
+  { name: "Improved Spirit", category: "spirit", tier: 3, cost: 2400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/improved_spirit.webp", description: "Increases Spirit Power and out-of-combat regeneration.", stats: ["+18 Spirit Power", "+1.5 Out of Combat Regen"] },
+  { name: "Mystic Slow", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mystic_slow.webp", description: "When the target takes Spirit Damage, they have their Move Speed reduced.", stats: ["+30 Health", "+0.75m Sprint Speed", "-30% Movement Slow on spirit damage", "-12% Dash Distance on spirit damage"] },
+  { name: "Mystic Vulnerability", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mystic_vulnerability.webp", description: "When an enemy takes Spirit Damage, they have their Spirit Resist reduced.", stats: ["+8% Spirit Resist", "-8% Spirit Resist on target (7s) on spirit damage"] },
+  { name: "Quicksilver Reload", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/quicksilver_reload.webp", description: "Your imbued ability charges up over time with bonus spirit damage, bonus fire rate, and reloads bullets on use.", stats: ["+44 Imbued Ability Damage (at full charge)", "+10% Fire Rate on use", "100% Bullets Reloaded on use"] },
+  { name: "Slowing Hex", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/slowing_hex.webp", description: "Slows movement of enemy target, Silences their movement-based items and abilities, and increases their gravity.", stats: ["+0.5m Sprint Speed", "-20% Move Speed on target (3.5s)", "-30% Dash Distance on target", "27s cooldown"] },
+  { name: "Spirit Sap", category: "spirit", tier: 2, cost: 1600, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/spirit_sap.webp", description: "Target an enemy to reduce their Spirit Resist and Spirit Power.", stats: ["+50 Bonus Health", "-9% Spirit Resist on target (12s)", "-30 Spirit Power on target", "40m cast range / 18s cooldown"] },
+  { name: "Disarming Hex", category: "spirit", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/disarming_hex.webp", description: "Disarms enemy target and reduces their Bullet Resist.", stats: ["+75 Bonus Health", "+0.75m Sprint Speed", "4s Disarm", "-13% Bullet Resist (4s)", "16s cooldown"] },
+  { name: "Greater Expansion", category: "spirit", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/greater_expansion.webp", description: "Increases the range and effect radius of your abilities and items.", stats: ["+10% Spirit Resist", "Increased ability and item range/radius"] },
+  { name: "Knockdown", category: "spirit", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/knockdown.webp", description: "Apply a Stun after 2s; stun duration is increased against airborne targets.", stats: ["+75 Bonus Health", "+5% Ability Range", "0.5s Stun (35s cooldown)", "45m cast range"] },
+  { name: "Radiant Regeneration", category: "spirit", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/radiant_regeneration.webp", description: "Heal and gain bonus Movement Speed for a short duration when you cast an ability.", stats: ["+90 Bonus Health", "+4 HP/s Regen", "+70 Heal on ability cast", "+1.75m Move Speed (3s) on ability cast"] },
+  { name: "Silence Wave", category: "spirit", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/silence_glyph.webp", description: "Launch an expanding projectile which Silences enemies for a short duration and deals impact damage.", stats: ["+50 Bonus Health", "100 Damage", "Short Silence on hit", "30s cooldown"] },
+  { name: "Spirit Snatch", category: "spirit", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/spirit_snatch.webp", description: "Your melee attacks against heroes deal extra Spirit Damage and steal Spirit Resist and Spirit Power.", stats: ["+7% Melee Damage", "+75 Bonus Health", "50 Spirit Damage on melee", "12% Spirit Resist Steal", "15 Spirit Power Steal (10s)"] },
+  { name: "Superior Cooldown", category: "spirit", tier: 4, cost: 4800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/superior_cooldown.webp", description: "Reduces the Cooldown of your abilities.", stats: ["+4 Out of Combat Regen", "Ability cooldown reduction"] },
+  { name: "Superior Duration", category: "spirit", tier: 4, cost: 4800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/superior_duration.webp", description: "Increases the duration of your abilities and items.", stats: ["+8% Bullet Resist", "Increased ability and item duration"] },
+  { name: "Surge of Power", category: "spirit", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/surge_of_power.webp", description: "Imbue an ability with permanent Spirit Power; when that ability is used, gain bonus Move Speed and maintain full speed while attacking.", stats: ["+24 Imbued Ability Spirit Power", "+20% Fire Rate on proc", "+1.75m Move Speed on proc (8s)"] },
+  { name: "Tankbuster", category: "spirit", tier: 4, cost: 4000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/tankbuster.webp", description: "Charges up over time with bonus spirit damage; abilities dealing over 165 damage deal additional damage based on the target's current health, ignoring Spirit Resistance.", stats: ["+50 Bonus Health", "+40 Base Bonus Damage", "+8% Current HP Bonus Damage (ignores resist)", "14s charge-up time"] },
+  { name: "Torment Pulse", category: "spirit", tier: 3, cost: 3200, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/torment_pulse.webp", description: "Periodically deals Spirit Damage to the closest two enemies nearby.", stats: ["+100 Bonus Health", "+15% Melee Resist", "25 Spirit Damage per pulse", "9m radius / 1.4s pulse interval"] },
+  { name: "Arctic Blast", category: "spirit", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/arctic_blast.webp", description: "Release an expanding ice blast that deals Spirit Damage, Freezing and then Slowing targets; frozen targets take increased damage.", stats: ["+10% Spirit Resist", "175 Damage", "0.75s Freeze", "+15% Frozen Bonus Damage", "24s cooldown"] },
+  { name: "Boundless Spirit", category: "spirit", tier: 4, cost: 8800, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/boundless_spirit.webp", description: "Greatly increases Spirit Power with both flat and percentage bonuses.", stats: ["+15% Spirit Power", "+30 Spirit Power", "+75 Bonus Health", "+4 Out of Combat Regen"] },
+  { name: "Cursed Relic", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/curse.webp", description: "Curses an enemy, interrupting, Silencing, Disarming, and preventing item usage while removing all non-ultimate buffs.", stats: ["-10% Damage Penalty", "3.25s Curse (Silence + Disarm + no items)", "20m cast range / 55s cooldown"] },
+  { name: "Echo Shard", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/echo_shard.webp", description: "Reset the cooldown of the imbued non-ultimate ability.", stats: ["+5% Fire Rate", "+5% Spirit Resist", "+5% Bullet Resist", "Imbued ability cooldown reset (30s cooldown)"] },
+  { name: "Escalating Exposure", category: "spirit", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/escalating_exposure.webp", description: "Dealing Spirit Damage applies a stacking Spirit Amp that increases your Spirit Damage to the target.", stats: ["+17% Spirit Resist", "+4.5% Spirit Amp per Stack (max 12 stacks)", "-8% Spirit Resist on target on spirit damage"] },
+  { name: "Focus Lens", category: "spirit", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/focus_lens.webp", description: "Target an enemy to Silence them; a portion of all damage dealt during the silence gets applied to the target when the silence wears off.", stats: ["+10% Fire Rate", "+30 Spirit Power", "-9% Spirit Resist on target", "4s Silence + 30% damage detonation (45s cooldown)"] },
+  { name: "Lightning Scroll", category: "spirit", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/lightning_scroll.webp", description: "Damage from your ultimate applies a stun and deals bonus spirit damage after a short delay.", stats: ["+50 Bonus Health", "+0.75m Sprint Speed", "-30% Move Speed on spirit damage", "0.75s Stun after 3s delay", "150 Bonus Damage (once per target per ultimate)"] },
+  { name: "Magic Carpet", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/magic_carpet.webp", description: "Summon a Magic Carpet that flies you away; while flying you are immune to slows and any action dismisses the carpet.", stats: ["+15% Ability Duration", "+14 Spirit Power", "+125 Bonus Health", "+7m Fly Speed", "32s cooldown"] },
+  { name: "Mercurial Magnum", category: "spirit", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mercurial_magnum.webp", description: "Your imbued ability charges up with bonus spirit damage; until your next reload, your bullets deal bonus Spirit Damage based on your Spirit Power.", stats: ["+20% Max Ammo", "+7 Spirit Power", "+25% Base Bullet Damage", "+22% Fire Rate", "60 Spirit Damage per bullet after ability use"] },
+  { name: "Mystic Reverb", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/mystic_reverb.webp", description: "Imbue an ability with Lifesteal; on hit, apply a slow to the target and deal a percentage of the damage dealt to nearby enemies after a short delay.", stats: ["+10% Spirit Lifesteal", "50% Damage echo to nearby enemies", "+27% Imbued Lifesteal", "-40% Move Speed on hit"] },
+  { name: "Refresher", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/refresher.webp", description: "Reset the cooldown of all your abilities and restore all your charges.", stats: ["Full ability cooldown reset (300s cooldown)"] },
+  { name: "Scourge", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/scourge.webp", description: "Apply Spirit Resist and an aura on a friendly target that deals Spirit damage to nearby enemies proportional to their max health.", stats: ["+100 Bonus Health", "+4% Ability Cooldown Reduction", "+40% Spirit Resist (on target)", "3.5% Max HP/s Spirit Damage aura (10s / 35s cooldown)"] },
+  { name: "Spirit Burn", category: "spirit", tier: 4, cost: 6400, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/spirit_burn.webp", description: "Dealing significant Spirit Damage causes an explosion dealing damage and a burn to nearby enemies with reduced healing.", stats: ["+6% Ability Range", "110 Explosion Damage", "24 DPS burn (8s)", "-70% Healing Reduction while burning", "20s cooldown"] },
+  { name: "Transcendent Cooldown", category: "spirit", tier: 4, cost: 11200, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/transcendent_cooldown.webp", description: "Reduces the Cooldown of your abilities and items.", stats: ["+4 Out of Combat Regen", "Ability and item cooldown reduction"] },
+  { name: "Vortex Web", category: "spirit", tier: 4, cost: 8000, image: "https://game.deadlock.coach/vpk/panorama/images/items/spirit/vortex_web.webp", description: "Throw a vacuum grenade that pulls all enemies into a small area and applies Slowing Hex.", stats: ["+8% Ability Range", "+0.75m Sprint Speed", "12m Capture Radius", "-35% Move Speed (4s)", "-40% Dash Distance", "42s cooldown"] }
+];
+
+// ─── State ───────────────────────────────────────────────────────────────────
+let currentFilter = 'all';
+let currentMode = 'flashcard';
+let filteredItems = [...ALL_ITEMS];
+let deckOrder = [];
+let fcIndex = 0;
+let quizQueue = [];
+let quizIndex = 0;
+let quizCorrect = 0;
+let quizWrong = 0;
+let quizAnswered = false;
+
+// ─── Utility ─────────────────────────────────────────────────────────────────
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function categoryBadge(cat) {
+  return `<span class="card-front-category ${cat}-badge">${cat.charAt(0).toUpperCase() + cat.slice(1)}</span>`;
+}
+
+function categoryBorderClass(cat) {
+  return `${cat}-border`;
+}
+
+function imgEl(src, cls, alt) {
+  return `<img src="${src}" class="${cls}" alt="${alt}" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">`;
+}
+
+// ─── Filter ───────────────────────────────────────────────────────────────────
+function setFilter(cat, btn) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.className = 'filter-btn';
+  });
+  btn.classList.add(`active-${cat}`);
+
+  filteredItems = cat === 'all' ? [...ALL_ITEMS] : ALL_ITEMS.filter(i => i.category === cat);
+  deckOrder = shuffle(filteredItems.map((_, i) => i));
+  fcIndex = 0;
+  quizQueue = shuffle([...filteredItems]);
+  quizIndex = 0;
+  quizCorrect = 0;
+  quizWrong = 0;
+
+  if (currentMode === 'flashcard') {
+    renderFlashcard();
+  } else if (currentMode === 'quiz') {
+    renderQuiz();
+  } else if (currentMode === 'matching') {
+    matchStart();
+  }
+}
+
+// ─── Mode ─────────────────────────────────────────────────────────────────────
+function setMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-tab').forEach((t, i) => {
+    t.classList.toggle('active',
+      (i === 0 && mode === 'flashcard') ||
+      (i === 1 && mode === 'quiz') ||
+      (i === 2 && mode === 'matching')
+    );
+  });
+  document.getElementById('flashcard-mode').style.display = mode === 'flashcard' ? 'flex' : 'none';
+  document.getElementById('quiz-mode').style.display = mode === 'quiz' ? 'flex' : 'none';
+  document.getElementById('matching-mode').style.display = mode === 'matching' ? 'flex' : 'none';
+  document.getElementById('results-screen').style.display = 'none';
+  document.getElementById('score-bar').style.display = mode === 'quiz' ? 'flex' : 'none';
+
+  if (mode === 'quiz') {
+    quizQueue = shuffle([...filteredItems]);
+    quizIndex = 0;
+    quizCorrect = 0;
+    quizWrong = 0;
+    updateScoreBar();
+    renderQuiz();
+  }
+  if (mode === 'matching') {
+    matchStart();
+  }
+}
+
+// ─── FLASHCARD LOGIC ──────────────────────────────────────────────────────────
+function initDeck() {
+  deckOrder = shuffle(filteredItems.map((_, i) => i));
+  fcIndex = 0;
+  renderFlashcard();
+}
+
+function renderFlashcard() {
+  const card = document.getElementById('fc-card');
+  card.classList.remove('flipped');
+
+  const item = filteredItems[deckOrder[fcIndex]];
+  const total = filteredItems.length;
+
+  document.getElementById('fc-progress').textContent = `Card ${fcIndex + 1} of ${total}`;
+  document.getElementById('fc-prev').disabled = fcIndex === 0;
+  document.getElementById('fc-next').disabled = fcIndex === total - 1;
+
+  const borderCls = categoryBorderClass(item.category);
+
+  // Front
+  const front = document.getElementById('fc-front');
+  front.className = `card-face front ${borderCls}`;
+  front.innerHTML = `
+    ${categoryBadge(item.category)}
+    <img src="${item.image}" class="card-item-icon" alt="${item.name}"
+      onerror="this.style.opacity=0.3">
+    <div class="card-item-name">${item.name}</div>
+    <div class="card-tier">T${item.tier} · ${item.cost} Souls</div>
+    <div class="flip-hint">Click to reveal</div>
+  `;
+
+  // Back
+  const back = document.getElementById('fc-back');
+  back.className = `card-face back ${borderCls}`;
+
+  const statsHtml = item.stats.map(s =>
+    `<div class="stat-pill">${s}</div>`
+  ).join('');
+
+  back.innerHTML = `
+    <div class="back-header">
+      <img src="${item.image}" class="back-icon" alt="${item.name}" onerror="this.style.opacity=0.3">
+      <div>
+        <div class="back-title">${item.name}</div>
+        <div class="back-subtitle">${categoryBadge(item.category)} &nbsp; T${item.tier} · ${item.cost} Souls</div>
+      </div>
+    </div>
+    <div class="back-description">"${item.description}"</div>
+    <div class="stats-grid">${statsHtml}</div>
+  `;
+}
+
+function flipCard() {
+  document.getElementById('fc-card').classList.toggle('flipped');
+}
+
+function fcNav(dir) {
+  const newIdx = fcIndex + dir;
+  if (newIdx < 0 || newIdx >= filteredItems.length) return;
+  fcIndex = newIdx;
+  renderFlashcard();
+}
+
+function shuffleDeck() {
+  deckOrder = shuffle(filteredItems.map((_, i) => i));
+  fcIndex = 0;
+  renderFlashcard();
+}
+
+// ─── QUIZ LOGIC ───────────────────────────────────────────────────────────────
+function renderQuiz() {
+  document.getElementById('quiz-mode').style.display = 'flex';
+  document.getElementById('results-screen').style.display = 'none';
+
+  if (quizIndex >= quizQueue.length) {
+    showResults();
+    return;
+  }
+
+  quizAnswered = false;
+  document.getElementById('quiz-feedback').textContent = '';
+  document.getElementById('quiz-next-btn').style.display = 'none';
+
+  const item = quizQueue[quizIndex];
+  const pct = (quizIndex / quizQueue.length) * 100;
+  document.getElementById('quiz-progress-fill').style.width = pct + '%';
+
+  // Build wrong options from other items
+  const pool = filteredItems.filter(i => i.name !== item.name);
+  const wrongs = shuffle(pool).slice(0, 3);
+  const options = shuffle([item, ...wrongs]);
+
+  const borderCls = categoryBorderClass(item.category);
+
+  document.getElementById('quiz-card').className = `quiz-card ${borderCls}`;
+  document.getElementById('quiz-card').innerHTML = `
+    ${categoryBadge(item.category)}
+    <img src="${item.image}" class="quiz-item-icon" alt="${item.name}" onerror="this.style.opacity=0.3">
+    <div class="quiz-item-name">${item.name}</div>
+    <div class="quiz-question">What does this item do?</div>
+    <div class="quiz-options" id="quiz-options">
+      ${options.map((opt, i) => `
+        <button class="quiz-option" data-correct="${opt.name === item.name}" onclick="selectAnswer(this, '${item.name}')">
+          ${opt.description}
+        </button>
+      `).join('')}
+    </div>
+  `;
+}
+
+function selectAnswer(btn, correctName) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+
+  const isCorrect = btn.dataset.correct === 'true';
+  const fb = document.getElementById('quiz-feedback');
+  const opts = document.querySelectorAll('.quiz-option');
+
+  opts.forEach(o => {
+    o.classList.add('locked');
+    if (o.dataset.correct === 'true') o.classList.add('correct');
+  });
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    fb.textContent = '✓ Correct!';
+    fb.className = 'quiz-feedback feedback-correct';
+    quizCorrect++;
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = '✗ Wrong — the correct answer is highlighted.';
+    fb.className = 'quiz-feedback feedback-wrong';
+    quizWrong++;
+  }
+
+  updateScoreBar();
+  document.getElementById('quiz-next-btn').style.display = 'inline-block';
+}
+
+function quizNext() {
+  quizIndex++;
+  renderQuiz();
+}
+
+function showResults() {
+  document.getElementById('quiz-mode').style.display = 'none';
+  document.getElementById('results-screen').style.display = 'flex';
+  document.getElementById('score-bar').style.display = 'none';
+
+  const total = quizQueue.length;
+  const pct = total > 0 ? Math.round((quizCorrect / total) * 100) : 0;
+  const color = pct >= 70 ? 'var(--correct)' : pct >= 40 ? 'var(--weapon)' : 'var(--wrong)';
+
+  document.getElementById('result-pct').textContent = pct + '%';
+  document.getElementById('result-pct').style.color = color;
+  document.getElementById('res-correct').textContent = quizCorrect;
+  document.getElementById('res-wrong').textContent = quizWrong;
+}
+
+function restartQuiz() {
+  quizQueue = shuffle([...filteredItems]);
+  quizIndex = 0;
+  quizCorrect = 0;
+  quizWrong = 0;
+  document.getElementById('results-screen').style.display = 'none';
+  document.getElementById('quiz-mode').style.display = 'flex';
+  document.getElementById('score-bar').style.display = 'flex';
+  updateScoreBar();
+  renderQuiz();
+}
+
+function updateScoreBar() {
+  document.getElementById('score-correct').textContent = quizCorrect;
+  document.getElementById('score-wrong').textContent = quizWrong;
+}
+
+// ─── MATCHING LOGIC ───────────────────────────────────────────────────────────
+let matchQueue = [];       // shuffled pool for this session
+let matchRoundIndex = 0;   // how many items consumed so far
+let matchTotalMatched = 0;
+let matchTotalItems = 0;
+let matchSelected = null;  // { type: 'item'|'desc', index: number, el: Element }
+let matchPairs = [];       // current round's 5 pairs: [{item, desc, itemEl, descEl, matched}]
+let matchLocked = false;   // block clicks during wrong-flash animation
+
+function matchStart() {
+  matchQueue = shuffle([...filteredItems]);
+  matchRoundIndex = 0;
+  matchTotalMatched = 0;
+  matchTotalItems = matchQueue.length;
+  document.getElementById('match-total').textContent = matchTotalItems;
+  document.getElementById('match-score').textContent = 0;
+  matchLoadRound();
+}
+
+function matchLoadRound() {
+  matchSelected = null;
+  matchLocked = false;
+  document.getElementById('match-complete-banner').classList.remove('visible');
+  document.getElementById('matching-grid').style.display = 'grid';
+
+  const batch = matchQueue.slice(matchRoundIndex, matchRoundIndex + 5);
+  if (batch.length === 0) {
+    // All done — show final banner
+    document.getElementById('match-complete-banner').classList.add('visible');
+    document.getElementById('matching-grid').style.display = 'none';
+    document.getElementById('match-complete-sub').textContent = `You matched all ${matchTotalItems} items!`;
+    document.querySelector('#match-complete-banner .nav-btn').textContent = 'Play Again';
+    document.querySelector('#match-complete-banner .nav-btn').onclick = matchStart;
+    return;
+  }
+
+  const roundNum = Math.floor(matchRoundIndex / 5) + 1;
+  const totalRounds = Math.ceil(matchQueue.length / 5);
+  document.getElementById('match-progress').textContent = `Round ${roundNum} of ${totalRounds}`;
+
+  // Build pairs with shuffled descriptions order
+  const descOrder = shuffle(batch.map((_, i) => i));
+  matchPairs = batch.map((item, i) => ({ item, descIndex: descOrder[i], matched: false }));
+  // descIndex maps each item slot to which desc position shows its description
+  // We need: left col = items in order 0-4, right col = descriptions shuffled
+  // Build desc slots: slot[descOrder[i]] = item i
+  const descSlots = new Array(batch.length);
+  matchPairs.forEach((pair, i) => { descSlots[pair.descIndex] = i; });
+
+  const itemsCol = document.getElementById('match-items-col');
+  const descsCol = document.getElementById('match-descs-col');
+  itemsCol.innerHTML = '';
+  descsCol.innerHTML = '';
+
+  // Render item cards (left)
+  batch.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'match-item-card';
+    card.dataset.pairIndex = i;
+    card.innerHTML = `
+      <img src="${item.image}" class="match-icon" alt="${item.name}" onerror="this.style.opacity=0.3">
+      <div>
+        <div class="match-item-name">${item.name}</div>
+        <div class="match-item-cat">${item.category} · T${item.tier} · ${item.cost} Souls</div>
+      </div>`;
+    card.addEventListener('click', () => matchClickItem(i, card));
+    itemsCol.appendChild(card);
+  });
+
+  // Render description cards (right) — in shuffled order
+  descSlots.forEach((pairIndex, slot) => {
+    const card = document.createElement('div');
+    card.className = 'match-desc-card';
+    card.dataset.pairIndex = pairIndex;
+    card.dataset.slot = slot;
+    card.textContent = batch[pairIndex].description;
+    card.addEventListener('click', () => matchClickDesc(pairIndex, card));
+    descsCol.appendChild(card);
+  });
+}
+
+function matchClickItem(pairIndex, el) {
+  if (matchLocked) return;
+  const pair = matchPairs[pairIndex];
+  if (pair.matched) return;
+
+  // If clicking already-selected item, deselect
+  if (matchSelected && matchSelected.type === 'item' && matchSelected.index === pairIndex) {
+    el.classList.remove('selected');
+    matchSelected = null;
+    return;
+  }
+
+  // Deselect any previously selected item
+  document.querySelectorAll('.match-item-card.selected').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+
+  if (matchSelected && matchSelected.type === 'desc') {
+    // We have a desc selected — attempt match
+    matchAttempt(pairIndex, matchSelected.index, el, matchSelected.el);
+  } else {
+    matchSelected = { type: 'item', index: pairIndex, el };
+  }
+}
+
+function matchClickDesc(pairIndex, el) {
+  if (matchLocked) return;
+  const pair = matchPairs[pairIndex];
+  if (pair.matched) return;
+
+  // If clicking already-selected desc, deselect
+  if (matchSelected && matchSelected.type === 'desc' && matchSelected.index === pairIndex) {
+    el.classList.remove('selected');
+    matchSelected = null;
+    return;
+  }
+
+  // Deselect any previously selected desc
+  document.querySelectorAll('.match-desc-card.selected').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+
+  if (matchSelected && matchSelected.type === 'item') {
+    // We have an item selected — attempt match
+    matchAttempt(matchSelected.index, pairIndex, matchSelected.el, el);
+  } else {
+    matchSelected = { type: 'desc', index: pairIndex, el };
+  }
+}
+
+function matchAttempt(itemPairIndex, descPairIndex, itemEl, descEl) {
+  matchSelected = null;
+
+  if (itemPairIndex === descPairIndex) {
+    // Correct!
+    itemEl.classList.remove('selected');
+    descEl.classList.remove('selected');
+    itemEl.classList.add('matched');
+    descEl.classList.add('matched');
+    matchPairs[itemPairIndex].matched = true;
+    matchTotalMatched++;
+    document.getElementById('match-score').textContent = matchTotalMatched;
+
+    // Check if round is complete
+    if (matchPairs.every(p => p.matched)) {
+      matchRoundIndex += 5;
+      setTimeout(() => {
+        const remaining = matchQueue.length - matchRoundIndex;
+        if (remaining <= 0) {
+          document.getElementById('match-complete-banner').classList.add('visible');
+          document.getElementById('matching-grid').style.display = 'none';
+          document.getElementById('match-complete-sub').textContent = `You matched all ${matchTotalItems} items!`;
+          document.querySelector('#match-complete-banner .nav-btn').textContent = 'Play Again';
+          document.querySelector('#match-complete-banner .nav-btn').onclick = matchStart;
+        } else {
+          document.getElementById('match-complete-sub').textContent =
+            `${remaining} item${remaining !== 1 ? 's' : ''} remaining`;
+          document.getElementById('match-complete-banner').classList.add('visible');
+          document.getElementById('matching-grid').style.display = 'none';
+        }
+      }, 400);
+    }
+  } else {
+    // Wrong — flash both red then reset
+    matchLocked = true;
+    itemEl.classList.remove('selected');
+    descEl.classList.remove('selected');
+    itemEl.classList.add('wrong-flash');
+    descEl.classList.add('wrong-flash');
+    setTimeout(() => {
+      itemEl.classList.remove('wrong-flash');
+      descEl.classList.remove('wrong-flash');
+      matchLocked = false;
+    }, 400);
+  }
+}
+
+function matchNextRound() {
+  document.getElementById('match-complete-banner').classList.remove('visible');
+  document.getElementById('matching-grid').style.display = 'grid';
+  matchLoadRound();
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+filteredItems = [...ALL_ITEMS];
+initDeck();
+</script>
+</body>
+</html>

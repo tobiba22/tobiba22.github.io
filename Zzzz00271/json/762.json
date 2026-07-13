@@ -1,0 +1,55 @@
+{
+  "name": "Projections#536",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/536.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 536,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Green Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pool Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Some Shoes"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "PAPP"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Eat"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Shooter Chicken"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "536.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

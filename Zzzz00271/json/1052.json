@@ -1,0 +1,55 @@
+{
+  "name": "Projections#939",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/939.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 939,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Green Squares"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Fever Room"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Black String"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Tap"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Kirby"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Paparazzi"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "101.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

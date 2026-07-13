@@ -1,0 +1,55 @@
+{
+  "name": "Projections#221",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/221.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 221,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Gators"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Plaque"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bread"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Projected Image"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "221.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

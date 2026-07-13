@@ -1,0 +1,51 @@
+{
+  "name": "Projections#746",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/746.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 746,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Classic Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White Brick"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Wire Question Mark"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Bottle"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "76"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "The Witness"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "746.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#102",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/102.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 102,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Paper Ball"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Wall Museum"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Small"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "102.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

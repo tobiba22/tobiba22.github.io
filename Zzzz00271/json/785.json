@@ -1,0 +1,55 @@
+{
+  "name": "Projections#876",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/876.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 876,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office 2"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Sun Mart"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Part to Something"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Nails on a Rug"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Lions"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "American Express"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Kia"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "278.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

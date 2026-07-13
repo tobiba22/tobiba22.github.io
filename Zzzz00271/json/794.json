@@ -1,0 +1,55 @@
+{
+  "name": "Projections#197",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/197.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 197,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office 2"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Terracota Strip"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Painted Cardboard"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Acrobatic Spoons"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 2"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "The Chef"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "MR"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "197.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

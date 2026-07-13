@@ -1,0 +1,55 @@
+{
+  "name": "Projections#681",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/681.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 681,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Standard Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Tarp Hiding Large Wall Painting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Sweep Pile"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Ernie"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "FWT 2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "681.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

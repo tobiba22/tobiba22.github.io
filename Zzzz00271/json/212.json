@@ -1,0 +1,55 @@
+{
+  "name": "Projections#673",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/673.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 673,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Cobbled"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Rubber Band"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Paper Strip"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Stop"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ida"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "673.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

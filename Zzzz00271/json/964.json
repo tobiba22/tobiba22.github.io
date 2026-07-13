@@ -1,0 +1,55 @@
+{
+  "name": "Projections#488",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/488.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 488,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Splatter"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Rubber Band"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Mattress"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Eat"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bread"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Smudged"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "488.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

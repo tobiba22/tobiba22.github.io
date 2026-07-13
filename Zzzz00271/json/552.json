@@ -1,0 +1,55 @@
+{
+  "name": "Projections#769",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/769.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 769,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Light Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Project Room"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Padded Blanket"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Shooter Chicken"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "769.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

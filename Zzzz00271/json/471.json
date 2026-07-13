@@ -1,0 +1,55 @@
+{
+  "name": "Projections#986",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/986.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 986,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pebbledash Mixup"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Ashtray"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Cagney"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Toy Plane"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Kia"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "73.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

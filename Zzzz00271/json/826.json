@@ -1,0 +1,55 @@
+{
+  "name": "Projections#113",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/113.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 113,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Stone Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Offince Panels"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Canvas Rebar and Snail"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Ernie"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "CVGO"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "113.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

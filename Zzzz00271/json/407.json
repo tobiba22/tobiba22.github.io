@@ -1,0 +1,55 @@
+{
+  "name": "Projections#347",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/347.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 347,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Concrete Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White Brick"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "DVDs"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Nails on a Rug"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 1"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Datsun"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "EX2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1097.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

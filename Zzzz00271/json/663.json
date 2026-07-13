@@ -1,0 +1,55 @@
+{
+  "name": "Projections#707",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/707.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 707,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pool Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Paper Strip"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Cagney"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Double"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "707.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

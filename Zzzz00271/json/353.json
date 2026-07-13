@@ -1,0 +1,55 @@
+{
+  "name": "Projections#408",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/408.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 408,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Terracota Strip"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Rubber Band"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Nice Hat"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Sharpened Stick"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Lupin"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "936.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

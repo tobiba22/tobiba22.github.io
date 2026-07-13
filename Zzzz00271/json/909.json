@@ -1,0 +1,55 @@
+{
+  "name": "Projections#849",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/849.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 849,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Quilted"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Luxury Liner"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "PAPP"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 1"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "ID"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Crash"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "849.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

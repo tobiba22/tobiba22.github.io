@@ -1,0 +1,55 @@
+{
+  "name": "Projections#436",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/436.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 436,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Light Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Science School"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Packing Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Hello Moto"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wire and Yarn"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "CVGO"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "436.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

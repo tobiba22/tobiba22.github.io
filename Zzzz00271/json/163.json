@@ -1,0 +1,55 @@
+{
+  "name": "Projections#478",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/478.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 478,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Round The Shops"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Ball"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Inset Ceiling Tile"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Jeff Gordon Card"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cup Movie"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "478.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#789",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/789.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 789,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Clubhouse"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Ashtray"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Lions"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Toy Plane"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Qin Shi Huang"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "541.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

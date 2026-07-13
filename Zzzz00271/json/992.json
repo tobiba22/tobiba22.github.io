@@ -1,0 +1,55 @@
+{
+  "name": "Projections#902",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/902.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 902,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Linoleum Tile"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Sun Mart"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Ashtray"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Plastic Box"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Little Presidente"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Working Class"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "902.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

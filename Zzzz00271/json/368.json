@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1082",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1082.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1082,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Kings Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Welcom Center"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Paper Strip"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "A Righteous Painting"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ya"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1082.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

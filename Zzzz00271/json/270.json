@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1098",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1098.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1098,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Light Vinyl Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Great Outdoors"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 2"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Toy Plane"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cutter"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1098.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

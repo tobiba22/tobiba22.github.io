@@ -1,0 +1,55 @@
+{
+  "name": "Projections#226",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/226.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 226,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Deep Blue"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Small Drawing"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Large Green Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 2"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Pink Card"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "226.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

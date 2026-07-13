@@ -1,0 +1,50 @@
+{
+  "name": "Projections #752",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "752.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 752,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Parquet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rent a Wall"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Padded Blanket"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "76"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Objet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "752.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  }
+}

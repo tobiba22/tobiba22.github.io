@@ -1,0 +1,55 @@
+{
+  "name": "Projections#110",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/110.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 110,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "White Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Terracota Strip"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Packing Paper"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Touch"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "ID"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "The Light"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "447.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

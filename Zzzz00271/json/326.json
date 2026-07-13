@@ -1,0 +1,55 @@
+{
+  "name": "Projections#129",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/129.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 129,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Red Pillow"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Luxury Liner"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Red Marble"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Houndstooth"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "PCTS"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "American Express"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Square"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "129.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

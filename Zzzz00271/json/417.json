@@ -1,0 +1,55 @@
+{
+  "name": "Projections#161",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/161.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 161,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Beige Stripes"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Bunker"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Quiet"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Turkish Jades"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Hornet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "161.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

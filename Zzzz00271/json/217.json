@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1022",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1022.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1022,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Terracota Strip"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Maglite"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Canvas Rebar and Snail"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Fly"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Globe Keychain"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Precious Paul"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1022.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

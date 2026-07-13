@@ -1,0 +1,55 @@
+{
+  "name": "Projections#993",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/993.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 993,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Greenish Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Offince Panels"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "A Button"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wire and Yarn"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Swan"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "993.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

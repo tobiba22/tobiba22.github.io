@@ -1,0 +1,55 @@
+{
+  "name": "Projections#665",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/665.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 665,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Kings Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "The Paper Spot"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Lizard"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "The Chef"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Working Class"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "665.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

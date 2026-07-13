@@ -1,0 +1,55 @@
+{
+  "name": "Projections#434",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/434.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 434,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Sun Mart"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Cough Drop"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Padded Blanket"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Godzilla"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "ThatThat"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "434.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

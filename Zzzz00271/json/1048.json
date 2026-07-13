@@ -1,0 +1,55 @@
+{
+  "name": "Projections#43",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/43.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 43,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Turf"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wave Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Speaker Wire"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Musical Records"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 2"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Tooth"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "43.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

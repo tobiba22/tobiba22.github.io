@@ -1,0 +1,55 @@
+{
+  "name": "Projections#870",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/870.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 870,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Stained Darkerly"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Grey"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "GFac"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Purple Dot"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "870.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

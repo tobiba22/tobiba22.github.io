@@ -1,0 +1,55 @@
+{
+  "name": "Projections#118",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/118.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 118,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Beige Stripes"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Dirty Wallpaper"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Legs"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Plastic Ring"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Wall Museum"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wang Huning"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Chinese Karaoke"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "118.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

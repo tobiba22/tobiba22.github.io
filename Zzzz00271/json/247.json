@@ -1,0 +1,54 @@
+{
+  "name": "Projections #349",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "407.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 349,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Blue Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Round The Shops"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Small Drawing"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Canvas Rebar and Snail"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Working Class"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "407.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  }
+}

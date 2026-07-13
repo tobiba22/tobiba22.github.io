@@ -1,0 +1,55 @@
+{
+  "name": "Projections#94",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/94.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 94,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Quilted"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Bunker"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Acrobatic Spoons"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Eat"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wire and Yarn"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Precious Paul"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "94.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

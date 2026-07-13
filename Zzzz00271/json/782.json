@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1042",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1042.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1042,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office 2"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Floral"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Small Drawing"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "The Party"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "KAWS II"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Slide 1"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1042.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

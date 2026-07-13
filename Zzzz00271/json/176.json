@@ -1,0 +1,55 @@
+{
+  "name": "Projections#242",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/242.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 242,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Blue Squares"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Classroom"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Speaker Wire"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Sweep Pile"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "The Dancer"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Shooter Chicken"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "242.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

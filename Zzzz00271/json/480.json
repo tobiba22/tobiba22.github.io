@@ -1,0 +1,55 @@
+{
+  "name": "Projections#486",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/486.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 486,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Dark Parquet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Warehouse"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Part to Something"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Plastic Ring"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 3"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Le Shok"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "486.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Projections#420",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/420.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 420,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Tarp Hiding Large Wall Painting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Wire Question Mark"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Plastic Ring"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Carpet Square in Frame"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bread"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Smudged"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "420.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

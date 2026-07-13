@@ -1,0 +1,55 @@
+{
+  "name": "Projections#674",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/674.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 674,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Beige Stripes"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rent a Wall"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Presidente"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Nails on a Rug"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Carpet Square in Frame"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wang Huning"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "New Standard"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "674.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

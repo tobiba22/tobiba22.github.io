@@ -1,0 +1,55 @@
+{
+  "name": "Projections#652",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/652.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 652,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Faux Wood Design"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rent a Wall"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Sweep Pile"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "War"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Wang Huning"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Chairs"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "652.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

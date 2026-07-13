@@ -1,0 +1,55 @@
+{
+  "name": "Projections#107",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/107.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 107,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Office"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "The Boucle Room"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Sweep Pile"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Small Photo 4"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Stick Dog"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Dog Diagram"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "107.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

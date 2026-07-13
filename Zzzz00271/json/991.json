@@ -1,0 +1,55 @@
+{
+  "name": "Projections#321",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/321.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 321,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Solid Concrete"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Splatter"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Painted Cardboard"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Ashtray"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Hello Moto"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Bead Gecko"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "DGS"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "321.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

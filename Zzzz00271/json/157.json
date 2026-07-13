@@ -1,0 +1,55 @@
+{
+  "name": "Projections#765",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/765.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 765,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Wavy Vinyl Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Pool Decal"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Rice Paper"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Plastic Sheet"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "PCTS"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "CEM"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1008.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

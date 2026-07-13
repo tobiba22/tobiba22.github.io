@@ -1,0 +1,55 @@
+{
+  "name": "Projections#153",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/153.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 153,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Grey"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "BOPAS"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Nails on a Rug"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "L Test"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Key"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Cup Movie"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "153.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

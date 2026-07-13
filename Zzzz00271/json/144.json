@@ -1,0 +1,55 @@
+{
+  "name": "Projections#546",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/546.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 546,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Yellow Linoleum"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "White Boards"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "String Pile"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Carpet Square in Frame"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Crash"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "546.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

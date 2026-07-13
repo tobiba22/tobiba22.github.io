@@ -1,0 +1,55 @@
+{
+  "name": "Projections#31",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/31.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 31,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Black Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Plastic Netting"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Aniline Yellow"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Ink 1"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Chairs"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "31.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

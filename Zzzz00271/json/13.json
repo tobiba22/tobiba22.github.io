@@ -1,0 +1,55 @@
+{
+  "name": "Projections#1050",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/1050.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 1050,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Faux Wood Design"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Rent a Wall"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Jerry Doll"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Foil Ball"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Dots"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "ID"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "FWBear"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "1050.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

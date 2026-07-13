@@ -1,0 +1,55 @@
+{
+  "name": "Projections#19",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/19.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 19,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Light Vinyl Wood"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Wood Panel"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Rubber Band"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "Nice Hat"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Paper Shadow"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "19.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}

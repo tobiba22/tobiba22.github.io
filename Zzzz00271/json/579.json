@@ -1,0 +1,55 @@
+{
+  "name": "Projections#662",
+  "symbol": "PROJ",
+  "description": "wrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "seller_fee_basis_points": 500,
+  "image": "0.png/662.png",
+  "external_url": "https://playcanasta.org/",
+  "edition": 662,
+  "attributes": [
+    {
+      "trait_type": "Floor",
+      "value": "Brown Carpet"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Floral"
+    },
+    {
+      "trait_type": "Object 1",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Object 2",
+      "value": "Blank"
+    },
+    {
+      "trait_type": "Wallbject",
+      "value": "KAWS II"
+    },
+    {
+      "trait_type": "Screen Charm",
+      "value": "Cigarette"
+    },
+    {
+      "trait_type": "Projection",
+      "value": "Ya 2"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "662.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "REPLACE_WITH_SOLANA_ADDRESS",
+        "share": 100
+      }
+    ]
+  },
+  "hello": "playcanasta.org"
+}
